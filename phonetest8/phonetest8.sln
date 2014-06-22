@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "phonetest8", "phonetest8\phonetest8.csproj", "{1D3ED5E1-2817-456A-8CE4-CE0648E89246}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SQLiteWinRTPhone", "..\..\..\GitHub\flamingcupcake\codeplex_sqlite\SQLiteWinRTPhone\SQLiteWinRTPhone.vcxproj", "{4AE0193F-5986-404E-87B6-1EC9301D16D8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SQLiteWinRTPhone", "SQLiteWinRTPhone\SQLiteWinRTPhone.vcxproj", "{4AE0193F-5986-404E-87B6-1EC9301D16D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

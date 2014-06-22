@@ -1,0 +1,19 @@
+﻿Build started 6/21/2014 1:31:38 AM.
+     1>Project "C:\Users\lamch_000\documents\GitHub\flamingcupcake\codeplex_sqlite\SQLiteWinRTPhone\SQLiteWinRTPhone.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\WPSDK\WP80\bin\CL.exe /c /IC:\Users\lamch_000\documents\GitHub\flamingcupcake\codeplex_sqlite\SQLiteWinRTPhone\ /I"Generated Files\\" /IDebug\ /AI"C:\Program Files (x86)\Windows Phone Kits\8.0\Windows Metadata" /ZI /ZW /ZW:nostdlib /nologo /W3 /WX- /sdl /MP /Od /Oy- /D _WINRT_DLL /D _WINDLL /D _UNICODE /D UNICODE /D _DEBUG /D WINAPI_FAMILY=WINAPI_FAMILY_PHONE_APP /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"pch.h" /Fp"Debug\SQLiteWinRT.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /FU"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\WPSDK\WP80\lib\platform.winmd" /FU"C:\Program Files (x86)\Windows Phone Kits\8.0\Windows Metadata\Windows.winmd" /analyze- /errorReport:prompt pch.cpp
+         pch.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\WPSDK\WP80\bin\CL.exe /c /IC:\Users\lamch_000\documents\GitHub\flamingcupcake\codeplex_sqlite\SQLiteWinRTPhone\ /I"Generated Files\\" /IDebug\ /AI"C:\Program Files (x86)\Windows Phone Kits\8.0\Windows Metadata" /ZI /ZW /ZW:nostdlib /nologo /W3 /WX- /sdl /MP /Od /Oy- /D _WINRT_DLL /D _WINDLL /D _UNICODE /D UNICODE /D _DEBUG /D WINAPI_FAMILY=WINAPI_FAMILY_PHONE_APP /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"pch.h" /Fp"Debug\SQLiteWinRT.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /FU"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\WPSDK\WP80\lib\platform.winmd" /FU"C:\Program Files (x86)\Windows Phone Kits\8.0\Windows Metadata\Windows.winmd" /analyze- /errorReport:prompt Database.cpp Statement.cpp
+         Database.cpp
+         Statement.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\WPSDK\WP80\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\lamch_000\documents\visual studio 2012\Projects\phonetest8\Debug\SQLiteWinRTPhone\SQLiteWinRT.dll" /INCREMENTAL /NOLOGO sqlite3.lib WindowsPhoneCore.lib RuntimeObject.lib PhoneAppModelHost.lib /NODEFAULTLIB:ole32.lib /MANIFEST:NO /DEBUG /PDB:"C:\Users\lamch_000\documents\visual studio 2012\Projects\phonetest8\Debug\SQLiteWinRTPhone\SQLiteWinRT.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /WINMD /WINMDFILE:"C:\Users\lamch_000\documents\visual studio 2012\Projects\phonetest8\Debug\SQLiteWinRTPhone\SQLiteWinRT.winmd" /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /DLL Debug\Database.obj
+         Debug\pch.obj
+         Debug\Statement.obj
+            Creating library C:\Users\lamch_000\documents\visual studio 2012\Projects\phonetest8\Debug\SQLiteWinRTPhone\SQLiteWinRT.lib and object C:\Users\lamch_000\documents\visual studio 2012\Projects\phonetest8\Debug\SQLiteWinRTPhone\SQLiteWinRT.exp
+         SQLiteWinRTPhone.vcxproj -> C:\Users\lamch_000\documents\visual studio 2012\Projects\phonetest8\Debug\SQLiteWinRTPhone\SQLiteWinRT.dll
+     1>Done Building Project "C:\Users\lamch_000\documents\GitHub\flamingcupcake\codeplex_sqlite\SQLiteWinRTPhone\SQLiteWinRTPhone.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:13.98

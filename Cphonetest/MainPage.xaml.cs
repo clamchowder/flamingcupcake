@@ -17,6 +17,9 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
+using SQLite;
+using Windows.Storage;
+
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
 namespace Cphonetest
@@ -56,6 +59,45 @@ namespace Cphonetest
             desc_end_offset = desc.IndexOf("</td>");
             output += desc.Substring(0, desc_end_offset);
 
+            outputTextBlock.Text = output;
+        }
+
+        private void DBClick(object sender, RoutedEventArgs e)
+        {
+            SQLiteConnection conn = new SQLiteConnection(ApplicationData.Current.LocalFolder + "test.db");
+            SQLiteCommand cmd = new SQLiteCommand(conn);
+            string output = "";
+            List<string> outputList;
+            int rc;
+            /*cmd.CommandText = "CREATE DATABASE test";
+            rc = cmd.ExecuteNonQuery();
+            output += "Create database: " + rc + " rows affected\n"; */
+
+            /*cmd.CommandText = "CREATE TABLE recipe (name TEXT, points INTEGER, required INTEGER)";
+            rc = cmd.ExecuteNonQuery();
+            output += "Create recipie table: " + rc + " rows affected\n";
+
+            cmd.CommandText = "CREATE TABLE recipeFood (rid, fid)";
+            rc = cmd.ExecuteNonQuery();
+            output += "Create recipeFood table: " + rc + " rows affected\n";
+
+            cmd.CommandText = "CREATE TABLE food (name TEXT, category TEXT)";
+            rc = cmd.ExecuteNonQuery();
+            output += "Create food table: " + rc + " rows affected\n";*/
+
+            cmd.CommandText = barcode.Text;
+            output = cmd.ExecuteScalar<string>();
+
+            /*cmd.CommandText = "DROP TABLE recipe";
+            rc = cmd.ExecuteNonQuery();
+            cmd.CommandText = "DROP TABLE food";
+            rc = cmd.ExecuteNonQuery();
+            cmd.CommandText = "DROP TABLE recipeFood";
+            rc = cmd.ExecuteNonQuery();*/
+
+            /*string[] outputArr = outputList.ToArray();
+            for (int i = 0; i < outputArr.Length; i++)
+                output += outputArr[i] + "\n";*/
             outputTextBlock.Text = output;
         }
 

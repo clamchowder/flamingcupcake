@@ -11,8 +11,13 @@
     <Grid>
         <Button Content="Hello" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="281,0,0,0" Click="TestClick"/>
         <TextBox Name="barcode" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="0049000011340" VerticalAlignment="Top" Width="266"/>
-        <ScrollViewer HorizontalAlignment="Left" Height="577" Margin="10,53,0,0" VerticalAlignment="Top" Width="380">
-            <TextBlock Name="outputTextBlock" TextWrapping="Wrap" Text="TextBlock"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="534" Margin="10,96,0,0" VerticalAlignment="Top" Width="380">
+            <TextBlock Name="outputTextBlock" TextWrapping="Wrap" Text="TextBlock" Height="532" Width="373"/>
         </ScrollViewer>
+        <Button Content="DB" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Click="DBClick"/>
+        <ComboBox HorizontalAlignment="Left" Margin="124,43,0,0" VerticalAlignment="Top" Width="266">
+            <x:String>Test1</x:String>
+            <x:String>Test2</x:String>
+        </ComboBox>
     </Grid>
 </Page>

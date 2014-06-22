@@ -30,3 +30,35 @@ c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\o
 c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\obj\Debug\qualifiers.txt.intermediate
 c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\obj\Debug\ProjectArchitectures.txt
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\bin\Debug\App.xbf
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\bin\Debug\MainPage.xbf
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\bin\Debug\Cphonetest.xr.xml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\bin\Debug\Cphonetest.exe
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\bin\Debug\Cphonetest.pdb
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\bin\Debug\resources.pri
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\bin\Debug\AppxManifest.xml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\bin\Debug\Cphonetest.build.appxrecipe
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\App.g.i.cs
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\App.g.cs
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\MainPage.g.i.cs
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\MainPage.g.cs
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\XamlTypeInfo.g.cs
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\App.xaml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\MainPage.xaml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\App.xbf
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\MainPage.xbf
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\XamlSaveStateFile.xml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\Cphonetest.exe
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\Cphonetest.pdb
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\priconfig.xml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\priconfig.xml.intermediate
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\layout.resfiles
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\layout.resfiles.intermediate
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\resources.resfiles
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\resources.resfiles.intermediate
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\pri.resfiles
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\pri.resfiles.intermediate
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\qualifiers.txt
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\qualifiers.txt.intermediate
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\ProjectArchitectures.txt

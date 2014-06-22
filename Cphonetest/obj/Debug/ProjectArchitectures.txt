@@ -1,1 +1,1 @@
-c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\Cphonetest.csproj;neutral
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\Cphonetest.csproj;neutral

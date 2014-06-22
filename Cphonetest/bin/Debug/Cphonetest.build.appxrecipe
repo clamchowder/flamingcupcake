@@ -7,52 +7,52 @@
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>c11aaabe-8ba6-4a7c-ab9e-34b7dbe0a37a</PackageIdentityName>
-    <IntermediateOutputPath>c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\obj\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\obj\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\bin\Debug\Cphonetest.exe">
+    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\bin\Debug\Cphonetest.exe">
       <PackagePath>Cphonetest.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\Assets\Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\Assets\SmallLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\Assets\SmallLogo.scale-240.png">
       <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\Assets\SplashScreen.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\Assets\SplashScreen.scale-240.png">
       <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\Assets\Square71x71Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\Assets\Square71x71Logo.scale-240.png">
       <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\Assets\StoreLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\Assets\StoreLogo.scale-240.png">
       <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\Assets\WideLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\Assets\WideLogo.scale-240.png">
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\bin\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\bin\Debug\Cphonetest.xr.xml">
+    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\bin\Debug\Cphonetest.xr.xml">
       <PackagePath>Cphonetest.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\lamch_000\documents\visual studio 2013\Projects\Cphonetest\Cphonetest\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\Cphonetest\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
