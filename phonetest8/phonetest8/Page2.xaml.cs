@@ -9,6 +9,9 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Windows.Phone.Media.Capture;
 using ZXing;
+using Windows.Storage;
+using Sqlite;
+using System.IO;
 
 namespace phonetest8
 {
@@ -17,6 +20,14 @@ namespace phonetest8
         public Page2()
         {
             InitializeComponent();
+        }
+        private void RunBarcode(object sender, RoutedEventArgs e)
+        {
+        }
+
+        public sealed class Food
+        {
+            
         }
     }
 }

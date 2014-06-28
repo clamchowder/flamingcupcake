@@ -8,10 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using phonetest8.Resources;
-//using SQLite;
-using Sqlite;
 
-using Windows.Storage;
 
 namespace phonetest8
 {
@@ -26,45 +23,9 @@ namespace phonetest8
          //BuildLocalizedApplicationBar();
         }
 
-        private void RunQuery(object sender, RoutedEventArgs e)
+        private void GotoTest(object sender, RoutedEventArgs e)
         {
-            //Database db = new Database(ApplicationData.Current.LocalFolder, "test.db");
-            /*SQLiteConnection conn = new SQLiteConnection(ApplicationData.Current.LocalFolder + "test.db"); 
-            SQLiteCommand cmd = new SQLiteCommand(conn);
-            string output = "";
-            List<List<string>> QueryResult = null;
-
-            cmd.CommandText = InputTextBox.Text;
-            try
-            {
-                QueryResult = cmd.ExecuteQuery<List<string>>();
-            }
-            catch (SQLiteException queryException)
-            {
-                output = queryException.Message;
-            }
-            if (QueryResult != null)
-            {
-                output += "Query returned " + QueryResult.Count() + " rows\n";
-                int i, j;
-                List<string>[] QueryResultArr = QueryResult.ToArray();
-                string[] arr = null;
-                for (i = 0; i < QueryResultArr.Length; i++)
-                {
-                    arr = QueryResultArr[i].ToArray();
-                    for (j = 0; j < arr.Length; j++)
-                    {
-                        if (j != 0) output += ", ";
-                        output += arr[j];
-                    }
-                    output += "\n";
-                }
-            }
-            Result.Text = output;*/
-        }
-
-        private void RunBarcode(object sender, RoutedEventArgs e)
-        {
+            NavigationService.Navigate(new Uri("/Page2.xaml", UriKind.Relative));
         }
 
         private void EnterFoodsClick(object sender, RoutedEventArgs e)

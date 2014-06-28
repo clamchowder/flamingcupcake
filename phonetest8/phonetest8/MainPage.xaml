@@ -56,7 +56,7 @@
         <Button Name="BotRightImg" HorizontalAlignment="Left" Height="216" Padding="0" Margin="233,231,0,0" Grid.Row="1" VerticalAlignment="Top" Width="216" BorderThickness="0" >
             <Image Source="Resources\_LOL1547.jpg"/>
         </Button>
-        <Button Content="test" HorizontalAlignment="Left" Padding="0" Margin="17,447,0,0" Grid.Row="1" VerticalAlignment="Top" Height="150" Width="432" BorderThickness="0"/>
+        <Button Content="test" HorizontalAlignment="Left" Padding="0" Margin="17,447,0,0" Grid.Row="1" VerticalAlignment="Top" Height="150" Width="432" BorderThickness="0" Click="GotoTest"/>
 
 
 
@@ -66,16 +66,12 @@
 
         <!--ContentPanel - place additional content here-->
         <!--<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button Content="Barcode" HorizontalAlignment="Left" Margin="0,72,0,0" VerticalAlignment="Top" Width="190" Click="RunBarcode"/>
-            <Button Content="SQL Query" HorizontalAlignment="Left" Margin="195,72,0,0" VerticalAlignment="Top" Width="190" Click="RunQuery"/>
+            
 
-        </Grid>
-        <TextBox Name="InputTextBox" HorizontalAlignment="Left" Height="72" Margin="12,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="072979004143" VerticalAlignment="Top" Width="458"/>
-        <ScrollViewer HorizontalAlignment="Left" Height="465" Margin="12,142,0,0" Grid.Row="1" VerticalAlignment="Top" Width="458">
-            <TextBlock Name="Result" TextWrapping="Wrap" Text=""/>
-        </ScrollViewer> -->
+        </Grid>-->
+        
 
-        <!--Uncomment to see an alignment grid to help ensure your controls are
+        <!-- Uncomment to see an alignment grid to help ensure your controls are
             aligned on common boundaries.  The image has a top margin of -32px to
             account for the System Tray. Set this to 0 (or remove the margin altogether)
             if the System Tray is hidden.

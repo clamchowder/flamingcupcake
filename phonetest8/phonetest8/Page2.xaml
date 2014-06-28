@@ -28,7 +28,12 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            
+            <Button Content="Barcode" HorizontalAlignment="Left" Margin="0,72,0,0" VerticalAlignment="Top" Width="190" Click="RunBarcode"/>
+            <!--<Button Content="SQL Query" HorizontalAlignment="Left" Margin="195,72,0,0" VerticalAlignment="Top" Width="190" Click="InitializeDatabase"/>-->
+            <TextBox Name="InputTextBox" HorizontalAlignment="Left" Height="72" Margin="0,10,0,0" TextWrapping="Wrap" Text="072979004143" VerticalAlignment="Top" Width="434"/>
+            <ScrollViewer HorizontalAlignment="Left" Height="256" Margin="12,341,0,0" VerticalAlignment="Top" Width="422">
+                <TextBlock Name="Result" TextWrapping="Wrap" Text="" Height="228"/>
+            </ScrollViewer>
         </Grid>
     </Grid>
 

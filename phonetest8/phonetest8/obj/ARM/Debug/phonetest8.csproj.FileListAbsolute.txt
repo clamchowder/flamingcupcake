@@ -24,3 +24,39 @@ C:\Users\lamch_000\documents\visual studio 2012\Projects\phonetest8\phonetest8\o
 C:\Users\lamch_000\documents\visual studio 2012\Projects\phonetest8\phonetest8\obj\ARM\Debug\XapCacheFile.xml
 C:\Users\lamch_000\documents\visual studio 2012\Projects\phonetest8\phonetest8\obj\ARM\Debug\EnterFoods.g.cs
 C:\Users\lamch_000\documents\visual studio 2012\Projects\phonetest8\phonetest8\obj\ARM\Debug\Page2.g.cs
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Assets\ApplicationIcon.png
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Assets\Tiles\FlipCycleTileLarge.png
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Assets\Tiles\FlipCycleTileMedium.png
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Assets\Tiles\FlipCycleTileSmall.png
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Assets\Tiles\IconicTileMediumLarge.png
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Assets\Tiles\IconicTileSmall.png
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\phonetest8.dll
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\phonetest8.pdb
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\AppManifest.xaml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Properties\WMAppManifest.xml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\phonetest8_Debug_ARM.xap
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Nokia.Graphics.Imaging.Managed.dll
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Nokia.Graphics.Imaging.winmd
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Nokia.InteropServices.WindowsRuntime.winmd
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\OpticalReaderLib.dll
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Sqlite.winmd
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\zxing.wp8.0.dll
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Nokia.Graphics.Imaging.Managed.xml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Sqlite.dll
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\zxing.wp8.0.pdb
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\zxing.wp8.0.xml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Nokia.Graphics.Imaging.dll
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Nokia.Graphics.Imaging.xml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Nokia.InteropServices.WindowsRuntime.dll
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Nokia.InteropServices.WindowsRuntime.xml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\phonetest8.csprojResolveAssemblyReference.cache
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\App.g.cs
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\MainPage.g.cs
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\EnterFoods.g.cs
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\Page2.g.cs
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\phonetest8.g.resources
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\phonetest8.Resources.AppResources.resources
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\phonetest8.csproj.GenerateResource.Cache
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\phonetest8.dll
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\phonetest8.pdb
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\XapCacheFile.xml

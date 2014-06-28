@@ -25,11 +25,34 @@
             <TextBlock Text="Foodstorm" Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock Text="Enter foods" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
-
+        
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,104">
+            <Canvas x:Name="viewfinderCanvas">
 
+                <!--Camera viewfinder -->
+                <Canvas.Background>
 
+                    <VideoBrush x:Name="viewfinderBrush">
+                        <VideoBrush.RelativeTransform>
+                            <CompositeTransform
+                        x:Name="viewfinderTransform"
+                        CenterX="0.5"
+                        CenterY="0.5"
+                        Rotation="90"/>
+                        </VideoBrush.RelativeTransform>
+                    </VideoBrush>
+                </Canvas.Background>
+                <TextBlock 
+            x:Name="focusBrackets" 
+            Text="[   ]" 
+            FontSize="40"
+            Visibility="Collapsed"/>
+            </Canvas>
+
+        </Grid>
+        <Grid x:Name="BottomPanel" Grid.Row="1" Margin="0,508,0,0">
+            <TextBlock Name="Info"/>
         </Grid>
     </Grid>
 
