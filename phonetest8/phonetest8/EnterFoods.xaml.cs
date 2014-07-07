@@ -97,6 +97,7 @@ namespace phonetest8
                     Stream resStream = response.GetResponseStream();
                     StreamReader sr = new StreamReader(resStream, System.Text.Encoding.UTF8);
                     string responseText = "";
+                    string foodName = "";
 
                     int desc_offset = 0;
                     int desc_end_offset = 0;
@@ -114,11 +115,12 @@ namespace phonetest8
                         {
                             output += "Error parsing return from UPC site";
                         }
-                        output += desc.Substring(0, desc_end_offset);
+                        foodName = desc.Substring(0, desc_end_offset);
                     }
                     Dispatcher.BeginInvoke(() => /* necessary to prevent access issues */
                     {
                         Info.Text = output;
+                        
                     });
                 }, null);
             }); 

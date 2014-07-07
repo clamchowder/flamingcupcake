@@ -8,6 +8,12 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using phonetest8.Resources;
 
+using Windows.Storage;
+using System.IO;
+using System.IO.IsolatedStorage;
+
+using Microsoft.WindowsAzure.MobileServices;
+
 namespace phonetest8
 {
     public partial class App : Application
@@ -18,6 +24,11 @@ namespace phonetest8
         /// <returns>The root frame of the Phone Application.</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
 
+        public static MobileServiceClient MobileService = new MobileServiceClient(
+            "https://foodstorm.azure-mobile.net/",
+            "oGwxtcEwqIfkPUxPiISdOMhyZDihUd78"
+        );
+
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
@@ -25,7 +36,6 @@ namespace phonetest8
         {
             // Global handler for uncaught exceptions.
             UnhandledException += Application_UnhandledException;
-
             // Standard XAML initialization
             InitializeComponent();
 
@@ -42,14 +52,6 @@ namespace phonetest8
                 Application.Current.Host.Settings.EnableFrameRateCounter = true;
 
                 // Show the areas of the app that are being redrawn in each frame.
-                //Application.Current.Host.Settings.EnableRedrawRegions = true;
-
-                // Enable non-production analysis visualization mode,
-                // which shows areas of a page that are handed off to GPU with a colored overlay.
-                //Application.Current.Host.Settings.EnableCacheVisualization = true;
-
-                // Prevent the screen from turning off while under the debugger by disabling
-                // the application's idle detection.
                 // Caution:- Use this under debug mode only. Application that disables user idle detection will continue to run
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
@@ -58,6 +60,14 @@ namespace phonetest8
         }
 
         // Code to execute when the application is launching (eg, from Start)
+                //Application.Current.Host.Settings.EnableRedrawRegions = true;
+
+                // Enable non-production analysis visualization mode,
+                // which shows areas of a page that are handed off to GPU with a colored overlay.
+                //Application.Current.Host.Settings.EnableCacheVisualization = true;
+
+                // Prevent the screen from turning off while under the debugger by disabling
+                // the application's idle detection.
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {

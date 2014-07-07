@@ -59,3 +59,17 @@ C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86
 C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\obj\x86\Debug\XapCacheFile.xml
 C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\Sqlite.winmd
 C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\Sqlite.dll
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\Microsoft.WindowsAzure.Mobile.dll
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\Microsoft.WindowsAzure.Mobile.Ext.dll
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\Microsoft.WindowsAzure.Mobile.UI.dll
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\System.Net.Http.dll
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\System.Net.Http.Extensions.dll
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\System.Net.Http.Primitives.dll
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\Microsoft.WindowsAzure.Mobile.xml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\Microsoft.WindowsAzure.Mobile.Ext.xml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\Microsoft.WindowsAzure.Mobile.UI.xml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\Newtonsoft.Json.xml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\System.Net.Http.xml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\System.Net.Http.Extensions.xml
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\System.Net.Http.Primitives.xml
