@@ -31,6 +31,7 @@ namespace phonetest8
         public async static Task<List<Ingredient>> getRecipeIngredients(Recipe recipe)
         {
             Dictionary<string, string> _params = new Dictionary<string, string>();
+            _params.Add("recipeid", recipe.Id);
             var result = await App.MobileService.InvokeApiAsync<List<Ingredient>>("getingredients", System.Net.Http.HttpMethod.Get, _params);
             return result;
         }

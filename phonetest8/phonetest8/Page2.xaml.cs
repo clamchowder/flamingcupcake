@@ -85,6 +85,17 @@ namespace phonetest8
             List<db.Instruction> instructions = result_arr[0].GetInstructions();
             Result.Text += instructions.Count();
         }
-        
+        private async void GetIngredients(object sender, RoutedEventArgs e)
+        {
+            if (recipe_matches != null)
+            {
+                var ingredients = await db.getRecipeIngredients(recipe_matches[0]);
+                RecipeView.Ingredient[] arr = ingredients.ToArray();
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    Result.Text += arr[i].Name + "\n";
+                }
+            }
+        }
     }
 }
