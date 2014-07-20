@@ -113,6 +113,7 @@ namespace phonetest8
         public static List<FridgeFood> GetFridgeFoods()
         {
             SQLiteConnection conn = new SQLiteConnection("test.db", SQLiteOpenFlags.Create | SQLiteOpenFlags.ReadWrite);
+            conn.CreateTable<FridgeFood>();
             List<FridgeFood> retlist;
             try
             {
