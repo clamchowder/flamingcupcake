@@ -84,7 +84,7 @@
         <DataTemplate x:Key="InsLongListSelectorGroupHeaderTemplate">
             <Border Background="{StaticResource PhoneChromeBrush}" BorderBrush="LightGray" BorderThickness="0" Padding="4">
                 <TextBlock Text="{Binding Text}" Margin="12"
-                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            Foreground="{StaticResource PhoneForegroundBrush}" 
                             TextWrapping="Wrap" 
                             Style="{StaticResource PhoneTextTitle2Style}"
                             FontSize="24"
