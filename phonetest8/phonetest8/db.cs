@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using SQLite;
 using Microsoft.WindowsAzure.MobileServices;
+using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace phonetest8
 {
@@ -200,6 +202,7 @@ namespace phonetest8
             public int nPoints;
             public int nRequired;
             public float rating;
+            public string imageStr;
 
             private string prepTimeString;
 
@@ -220,6 +223,17 @@ namespace phonetest8
                 }
                 set { prepTimeString = value; }
             }
+
+            public BitmapImage image {get {
+                if (imageStr == null) return null;
+                // Deserialze the base64 encoded image
+                byte[] imgByres = Convert.FromBase64String(imageStr);
+                Stream s = new MemoryStream(imgByres);
+                BitmapImage bmp = new BitmapImage();
+                bmp.SetSource(s);
+                return bmp;
+            }}
+
 
             /// <summary>
             /// Deserializes instructions, and returns a list of instruction objects

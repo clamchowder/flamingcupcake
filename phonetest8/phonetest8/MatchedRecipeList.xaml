@@ -44,7 +44,7 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding Name}" Style="{StaticResource PhoneTextTitle2Style}"/>
-                            <Image Grid.RowSpan="3" Grid.Column="0" Grid.Row="1" Margin="16" Source="/Images/StirFryPic.jpg"/>
+                            <Image Grid.RowSpan="3" Grid.Column="0" Grid.Row="1" Margin="16" Source="{Binding image}"/>
                             <TextBlock Grid.Column="1" Grid.Row ="1" Text="Rating (stars)" Style="{StaticResource PhoneTextSubtleStyle}" />
                             <TextBlock Grid.Column="1" Grid.Row ="2" Text="Match (number)" Style="{StaticResource PhoneTextAccentStyle}"/>
                             <TextBlock Grid.Column="1" Grid.Row ="3" Text="{Binding PrepTimeString}" Style="{StaticResource PhoneTextBlockBase}"/>
