@@ -135,6 +135,7 @@
     </Compile>
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="TiltEffect.cs" />
     <Compile Include="ViewModels\FridgeViewModel.cs" />
     <Compile Include="ViewModels\RecipeViewModel.cs" />
     <Compile Include="ViewRecipe.xaml.cs">

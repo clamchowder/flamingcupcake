@@ -22,8 +22,9 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Foodstorm" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Matches" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="FOODSTORM" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="recipe match" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="What do you want to cook?" Style="{StaticResource PhoneTextSubtleStyle}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -51,7 +52,7 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <TextBlock Name="Message" HorizontalAlignment="Left" Margin="12" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+            <TextBlock Name="Message" HorizontalAlignment="Left" Margin="12" TextWrapping="Wrap" VerticalAlignment="Top"/>
         </Grid>
     </Grid>
 

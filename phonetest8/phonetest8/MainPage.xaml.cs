@@ -13,6 +13,7 @@ namespace phonetest8
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        ProgressIndicator prog;
         public enum FoodGroup
         {
             produce, proteins, dairy, grains, condiments, misc
@@ -22,9 +23,6 @@ namespace phonetest8
         public MainPage()
         {
             InitializeComponent();
-            
-            // Sample code to localize the ApplicationBar
-            //BuildLocalizedApplicationBar();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -46,7 +44,9 @@ namespace phonetest8
 
         private async void GotoMatch(object send, RoutedEventArgs e)
         {
+            StartInDeterminateProgress("looking for suitable recipes");
             List<db.Recipe> matches = await db.FindRecipes();
+            StopInDeterminateProgress();
             MatchedRecipeList.RecipeList = matches;
             NavigationService.Navigate(new Uri("/MatchedRecipeList.xaml", UriKind.Relative));
         }
@@ -54,6 +54,28 @@ namespace phonetest8
         private void GotoFind(object send, RoutedEventArgs e)
         {
 
+        }
+
+        private void StartInDeterminateProgress(String text)
+        {
+            if (prog == null)
+            {
+                prog = new ProgressIndicator();
+            }
+            SystemTray.SetIsVisible(this, true);
+            prog.IsVisible = true;
+            prog.IsIndeterminate = true;
+            prog.Text = text;
+            SystemTray.SetProgressIndicator(this, prog);
+        }
+        private void StopInDeterminateProgress()
+        {
+            if (prog != null)
+            {
+                SystemTray.SetIsVisible(this, true);
+
+                prog.IsVisible = false;
+            }
         }
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()

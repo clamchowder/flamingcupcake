@@ -53,7 +53,7 @@ namespace phonetest8
         private void matchedRecipelist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             RecipeViewModel.recipe = matchedRecipelist.SelectedItem as db.Recipe;
-            RecipeViewModel.CreateInstructions(); // TODO: replace with actual passing List<Instructions<Ingredients>> over.
+            RecipeViewModel.CreateInstructions();
             NavigationService.Navigate(new Uri("/ViewRecipe.xaml", UriKind.Relative));
         }
     }
