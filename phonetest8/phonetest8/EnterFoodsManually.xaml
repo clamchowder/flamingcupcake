@@ -24,14 +24,15 @@
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="Foodstorm" Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock Text="Manual Entry" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="Enter the food you wish to add to your fridge." Style="{StaticResource PhoneTextSubtleStyle}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBox Name="FoodInputBox" HorizontalAlignment="Stretch" Height="72" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
             <Button Content="Find Matches" HorizontalAlignment="Left" Margin="0,75,0,0" VerticalAlignment="Top" Width="456"  Click="FindMatches"/>
-            <TextBlock Name="Status" HorizontalAlignment="Left" Margin="10,147,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+            <TextBlock Name="Status" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         </Grid>
-        <TextBox Name="FoodInputBox" HorizontalAlignment="Left" Height="72" Margin="14,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="454"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

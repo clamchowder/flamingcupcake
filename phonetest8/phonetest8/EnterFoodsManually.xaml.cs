@@ -7,34 +7,17 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Coding4Fun.Toolkit.Controls;
 
 namespace phonetest8
 {
     public partial class EnterFoodsManually : PhoneApplicationPage
     {
         public static List<db.FoodMatches> rawMatches;
-        public static List<StringKeyGroup<db.FoodMatches>> matches;
 
         // A status to display below the entry button
         // If status is set, text box should be cleared
         public static string status = "";
-
-        /// <summary>
-        /// Class with a key to hold food matches
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        public class StringKeyGroup<T> : List<T>
-        {
-            /// <summary>
-            /// The Key of this group.
-            /// </summary>
-            public string Key { get; private set; }
-
-            public StringKeyGroup(string key)
-            {
-                Key = key;
-            }
-        }
 
         /// <summary>
         /// Constructor. Clears list of matches
@@ -48,8 +31,20 @@ namespace phonetest8
         {
             // apply status if set by ChooseFoods (to give confirmation to user)
             // then clear status so it doesn't appear again next time the page is navigated to 
-            Status.Text = status;
+            if (status != "")
+            {
+                ToastPrompt toast = new ToastPrompt();
+                toast.Message = status;
+                toast.FontSize = 24;
+                toast.Height = Double.NaN;
+                toast.VerticalAlignment = VerticalAlignment.Bottom;
+                toast.TextWrapping = TextWrapping.Wrap;
+                toast.TextOrientation = System.Windows.Controls.Orientation.Vertical;
+
+                toast.Show();
+            }
             status = "";
+
         }
         /// <summary>
         /// Gets matches using Azure API, then navigates to page that
@@ -77,37 +72,6 @@ namespace phonetest8
             ChooseFood.matches = rawMatches;
             ChooseFood.referrer = "EnterFoodsManually";
             NavigationService.Navigate(new Uri("/ChooseFood.xaml", UriKind.Relative));
-        }
-
-        public static void CreateGroups()
-        {
-            // Create List to hold final list
-            List<StringKeyGroup<db.FoodMatches>> SortedBatch = new List<StringKeyGroup<db.FoodMatches>>();
-            StringKeyGroup<db.FoodMatches> produceFoods = new StringKeyGroup<db.FoodMatches>("produce");
-            StringKeyGroup<db.FoodMatches> proteinsFoods = new StringKeyGroup<db.FoodMatches>("proteins");
-            StringKeyGroup<db.FoodMatches> dairyFoods = new StringKeyGroup<db.FoodMatches>("dairy");
-            StringKeyGroup<db.FoodMatches> grainsFoods = new StringKeyGroup<db.FoodMatches>("grains");
-            StringKeyGroup<db.FoodMatches> condimentsFoods = new StringKeyGroup<db.FoodMatches>("condiments");
-            StringKeyGroup<db.FoodMatches> miscFoods = new StringKeyGroup<db.FoodMatches>("misc");
-            if (rawMatches == null) matches = new List<StringKeyGroup<db.FoodMatches>>();
-            // Fill each list with the appropriate FridgeFoods
-            foreach (db.FoodMatches match in rawMatches)
-            {
-                // use instruction as key, find instruction's list
-                if (match.foodGroup == "produce") produceFoods.Add(match);
-                else if (match.foodGroup == "proteins") proteinsFoods.Add(match);
-                else if (match.foodGroup == "diary") dairyFoods.Add(match);
-                else if (match.foodGroup == "grains") grainsFoods.Add(match);
-                else if (match.foodGroup == "condiments") condimentsFoods.Add(match);
-                else miscFoods.Add(match);
-            }
-            SortedBatch.Add(produceFoods);
-            SortedBatch.Add(proteinsFoods);
-            SortedBatch.Add(dairyFoods);
-            SortedBatch.Add(grainsFoods);
-            SortedBatch.Add(condimentsFoods);
-            SortedBatch.Add(miscFoods);
-            matches = SortedBatch;
         }
     }
 }
