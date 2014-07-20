@@ -1,6 +1,6 @@
-﻿<xapCache source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\phonetest8_Debug_ARM.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2014-07-20 12:29:38 AM">
-  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="2014-07-20 12:17:55 AM" />
-  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\Foodstorm.dll" archivePath="Foodstorm.dll" lastWriteTime="2014-07-20 12:29:31 AM" />
+﻿<xapCache source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\phonetest8_Debug_ARM.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2014-07-20 4:19:39 PM">
+  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="2014-07-20 4:06:30 PM" />
+  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\Foodstorm.dll" archivePath="Foodstorm.dll" lastWriteTime="2014-07-20 4:19:32 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Assets\BadgeLogo.png" archivePath="Assets\BadgeLogo.png" lastWriteTime="2014-07-19 9:25:16 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Assets\Logo.png" archivePath="Assets\Logo.png" lastWriteTime="2014-07-19 9:25:16 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Assets\SplashScreen.png" archivePath="Assets\SplashScreen.png" lastWriteTime="2014-07-19 9:25:16 PM" />
@@ -61,7 +61,7 @@
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\packages\NokiaImagingSDK.1.0.272.0\lib\wp8\ARM\Nokia.InteropServices.WindowsRuntime.dll" archivePath="Nokia.InteropServices.WindowsRuntime.dll" lastWriteTime="2014-07-19 9:25:12 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\packages\NokiaImagingSDK.1.0.272.0\lib\wp8\ARM\Nokia.InteropServices.WindowsRuntime.xml" archivePath="Nokia.InteropServices.WindowsRuntime.xml" lastWriteTime="2014-07-19 9:25:12 PM" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\ExtensionSDKs\SQLite.WP80\3.8.5\Redist\Debug\ARM\sqlite3.dll" archivePath="sqlite3.dll" lastWriteTime="2014-07-19 6:30:24 PM" />
-  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2014-07-20 12:09:57 AM" />
-  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="2014-07-20 12:29:37 AM" />
-  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="2014-07-20 12:18:00 AM" />
+  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2014-07-20 2:56:54 PM" />
+  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="2014-07-20 4:19:37 PM" />
+  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="2014-07-20 2:56:50 PM" />
 </xapCache>

@@ -67,15 +67,14 @@
 
         <Style x:Key="InsLongListSelectorJumpListStyle" TargetType="phone:LongListSelector">
             <Setter Property="LayoutMode" Value="List" />
-            <Setter Property="Margin" Value="4,4,4,0"/>
+            <Setter Property="Margin" Value="12"/>
             <Setter Property="ItemTemplate">
                 <Setter.Value>
                     <DataTemplate>
-                        <Border Background="{Binding Converter={StaticResource BackgroundConverter}}" Margin="6" >
+                        <Border Background="{StaticResource PhoneChromeBrush}" BorderBrush="LightGray" BorderThickness="0,0,0,3" Padding="4">
                             <TextBlock Text="{Binding Text}" 
-                                           FontFamily="{StaticResource PhoneFontFamilySemiBold}"
-                                           FontSize="24" Padding="11,0,0,0"
-                                           Foreground="{Binding Converter={StaticResource ForegroundConverter}}" VerticalAlignment="Stretch" TextWrapping="Wrap"/>
+                                           Style="{StaticResource PhoneTextTitle2Style}" FontSize="24" Margin ="12"
+                                           TextWrapping="Wrap"/>
                         </Border>
                     </DataTemplate>
                 </Setter.Value>
@@ -83,32 +82,30 @@
         </Style>
 
         <DataTemplate x:Key="InsLongListSelectorGroupHeaderTemplate">
-            <Border Background="{StaticResource PhoneBackgroundBrush}" BorderBrush= "{StaticResource PhoneBackgroundBrush}" BorderThickness="2"	
-                                       VerticalAlignment="Stretch"  				 
-                                        HorizontalAlignment="Stretch"
-                        Margin="8">
-                <TextBlock Text="{Binding Text}" 
-                            Foreground="{StaticResource PhoneForegroundBrush}" 
-                            FontSize="24"
-                            VerticalAlignment="Stretch"
+            <Border Background="{StaticResource PhoneChromeBrush}" BorderBrush="LightGray" BorderThickness="0" Padding="4">
+                <TextBlock Text="{Binding Text}" Margin="12"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
                             TextWrapping="Wrap" 
-                            Style="{StaticResource EmptyListHeaderStyle}"
+                            Style="{StaticResource PhoneTextTitle2Style}"
+                            FontSize="24"
                             HorizontalAlignment="Stretch"/>
             </Border>
         </DataTemplate>
 
         <DataTemplate x:Key="InsLongListSelectorItemTemplate" >
             <StackPanel Orientation="Vertical" Margin="48,0, 4, 0">
-                <Grid  Background="{StaticResource PhoneChromeBrush}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="{Binding Name}" Grid.Column="0" Style="{StaticResource PhoneTextNormalStyle}" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextWrapping ="Wrap" Margin="8"/>
-                    <TextBlock Text="{Binding Quantity}" Grid.Column="1" Style="{StaticResource PhoneTextSubtleStyle}" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextWrapping ="Wrap" Margin="8"/>
-                    <TextBlock Text="{Binding Units}" Grid.Column="2" Style="{StaticResource PhoneTextSubtleStyle}" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextWrapping ="Wrap" Margin="8"/>
-                </Grid>
+                <Border BorderBrush="{StaticResource PhoneChromeBrush}" BorderThickness="5, 0, 0, 0">
+                    <Grid  Background="{StaticResource PhoneBackgroundBrush}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Name}" Grid.Column="0" Style="{StaticResource PhoneTextNormalStyle}" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextWrapping ="Wrap" Margin="8"/>
+                        <TextBlock Text="{Binding Quantity}" Grid.Column="1" Style="{StaticResource PhoneTextSubtleStyle}" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextWrapping ="Wrap" Margin="8"/>
+                        <TextBlock Text="{Binding Units}" Grid.Column="2" Style="{StaticResource PhoneTextSubtleStyle}" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextWrapping ="Wrap" Margin="8"/>
+                    </Grid>
+                </Border>
             </StackPanel>
         </DataTemplate>
 
@@ -183,7 +180,7 @@
                          JumpListStyle="{StaticResource InsLongListSelectorJumpListStyle}"  
                          GroupHeaderTemplate="{StaticResource InsLongListSelectorGroupHeaderTemplate}"
                          ItemTemplate="{StaticResource InsLongListSelectorItemTemplate}"
-                         HideEmptyGroups ="true" IsGroupingEnabled ="true" LayoutMode="List"/>
+                         IsGroupingEnabled ="true" LayoutMode="List"/>
             </phone:PivotItem>
         </phone:Pivot>
 
