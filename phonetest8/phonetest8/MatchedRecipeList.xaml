@@ -51,6 +51,7 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
+            <TextBlock Name="Message" HorizontalAlignment="Left" Margin="12" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         </Grid>
     </Grid>
 

@@ -47,6 +47,9 @@ namespace phonetest8
         public async static Task<List<Recipe>> FindRecipes()
         {
             List<FridgeFood> fridgeFoods = GetFridgeFoods();
+            // If the fridge is empty, return an empty list. Don't even go API call.
+            if (fridgeFoods.Count == 0)
+                return new List<Recipe>();
             Dictionary<string, string> _params = new Dictionary<string, string>();
             FridgeFood[] fridgeFoodsArr = fridgeFoods.ToArray();
             string fridgeStr = "";

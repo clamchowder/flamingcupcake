@@ -25,63 +25,30 @@ namespace phonetest8
         {
             InitializeComponent();
 
-            
-            /*Recipe r1 = new Recipe();
-            r1.Name = "Chicken Quesadilla";
-            r1.prepTime = 120;
-            Recipe r2 = new Recipe();
-            r2.Name = "Chicken Alfredo";
-            r2.prepTime = 2;
-            Recipe r3 = new Recipe();
-            r3.Name = "Chicken Sprite";
-            r3.prepTime = 390;
-
-            RecipeList.Add(r1);
-            RecipeList.Add(r2);
-            RecipeList.Add(r3);*/
-
             matchedRecipelist.DataContext = this;
-            matchedRecipelist.ItemsSource = RecipeList;
+            try
+            {
+                matchedRecipelist.ItemsSource = RecipeList;
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
-        private async void haveANiceDay()
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            _recipeList = await db.FindRecipes();
+            Message.Visibility = Visibility.Collapsed;
+            if (RecipeList == null || RecipeList.Count == 0)
+            {
+                if (db.GetFridgeFoods().Count == 0)
+                    Message.Text = ":( There's nothing in the fridge. Go grocery shopping!";
+                else
+                    Message.Text = ":( We couldn't find anything that matched what you have...";
+                Message.Visibility = Visibility.Visible;
+            }
+            base.OnNavigatedFrom(e);
         }
-
-        /*public sealed class Recipe
-        {
-            public string Id;
-            private string name;
-            public string Name
-            {
-                get { return name; }
-                set { name = value; }
-            }
-            public string instructions;
-            public int prepTime;
-            private string prepTimeString;
-            public string PrepTimeString
-            {
-                get
-                {
-                    int hours = prepTime / 60;
-                    int mins = prepTime % 60;
-                    if (hours == 0)
-                    {
-                        return mins.ToString() + "m";
-                    }
-                    else
-                    {
-                        return hours.ToString() + "h " + mins.ToString() + "m";
-                    }
-                }
-              set { prepTimeString = value; }
-            }
-
-            public int nPoints;
-            public int nRequired;
-        }*/
 
         private void matchedRecipelist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
