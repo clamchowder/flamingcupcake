@@ -94,7 +94,7 @@ namespace phonetest8
             ins.foodId = food.foodId;
             ins.foodName = food.foodName;
             ins.foodGroup = food.foodGroup;
-            conn.Insert(ins);
+            conn.InsertOrReplace(ins);
         }
         /// <summary>
         /// Deletes the fridge item with the given id (id of fridge object = foodId)
@@ -131,6 +131,47 @@ namespace phonetest8
             }
             return retlist;
         }
+
+        /// <summary>
+        /// Given a barcode number in string format, attempts to fetch
+        /// the associated name from the cache
+        /// </summary>
+        /// <param name="barcode"></param>
+        /// <returns></returns>
+        public static string GetBarcodeResultFromCache(string barcode)
+        {
+            SQLiteConnection conn = new SQLiteConnection("test.db", SQLiteOpenFlags.Create | SQLiteOpenFlags.ReadWrite);
+            conn.CreateTable<BarcodeResult>();
+            string[] preparedStmtParams = new string[1];
+            preparedStmtParams[0] = barcode;
+            List<BarcodeResult> res = conn.Query<BarcodeResult>("SELECT barcodeStr, name FROM BarcodeResult WHERE barcodeStr=?", preparedStmtParams);
+            if (res.Count > 0)
+            {
+                return res.FirstOrDefault().name;
+            }
+            else return null;
+        }
+
+        public static void AddBarcodeResultToCache(string barcode, string result)
+        {
+            SQLiteConnection conn = new SQLiteConnection("test.db", SQLiteOpenFlags.Create | SQLiteOpenFlags.ReadWrite);
+            conn.CreateTable<BarcodeResult>();
+            BarcodeResult ins = new BarcodeResult();
+            ins.barcodeStr = barcode;
+            ins.name = result;
+            conn.InsertOrReplace(ins);
+        }
+
+        /// <summary>
+        /// For caching barcodes
+        /// </summary>
+        public sealed class BarcodeResult
+        {
+            [PrimaryKey]
+            public string barcodeStr { get; set; }
+            public string name { get; set; }
+        }
+        
         // Represents food table
         public sealed class Food
         {

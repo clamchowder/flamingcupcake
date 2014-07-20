@@ -185,53 +185,77 @@ namespace phonetest8
             Dispatcher.BeginInvoke(() =>
             {
                 string output = "Format: " + obj.BarcodeFormat + ", Result: " + obj.Text + "\n";
-                
+                string foodName = "";
+
                 if (obj.Text == last_upc) return;
                 last_upc = obj.Text;
                 Info.Text = output;
 
                 string barcodeValue = obj.Text; 
-                WebRequest req = WebRequest.Create("http://www.upcdatabase.com/item/" + barcodeValue);
-                req.BeginGetResponse(r =>
+                // First see if the barcode/associated result is cached
+                foodName = db.GetBarcodeResultFromCache(barcodeValue);
+                if (foodName == null)
                 {
-                    WebResponse response = req.EndGetResponse(r);
-                    Stream resStream = response.GetResponseStream();
-                    StreamReader sr = new StreamReader(resStream, System.Text.Encoding.UTF8);
-                    string responseText = "";
-                    string foodName = "";
+                    // Cache miss. Make a web request to get a result
+                    WebRequest req = WebRequest.Create("http://www.upcdatabase.com/item/" + barcodeValue);
+                    req.BeginGetResponse(r =>
+                    {
+                        WebResponse response = req.EndGetResponse(r);
+                        Stream resStream = response.GetResponseStream();
+                        StreamReader sr = new StreamReader(resStream, System.Text.Encoding.UTF8);
+                        string responseText = "";
 
-                    int desc_offset = 0;
-                    int desc_end_offset = 0;
-                    responseText = sr.ReadToEnd();
-                    desc_offset = responseText.IndexOf("Description") + 29;
-                    if (desc_offset == 28) // indexOf returns -1 => 29 - 1 = 28
-                    {
-                        output += "Could not find product";
-                        Dispatcher.BeginInvoke(() => /* necessary to prevent access issues */
+
+                        int desc_offset = 0;
+                        int desc_end_offset = 0;
+                        responseText = sr.ReadToEnd();
+                        desc_offset = responseText.IndexOf("Description") + 29;
+                        if (desc_offset == 28) // indexOf returns -1 => 29 - 1 = 28
                         {
-                            Info.Text = output;
-                            ManualButton.Visibility = Visibility.Visible;
-                        });
-                    }
-                    else
-                    {
-                        string desc = responseText.Substring(desc_offset);
-                        desc_end_offset = desc.IndexOf("</td>");
-                        if (desc_end_offset == -1)
-                        {
-                            output += "Error parsing return from UPC site";
+                            output += "Could not find product";
+                            Dispatcher.BeginInvoke(() => /* necessary to prevent access issues */
+                            {
+                                Info.Text = output;
+                                ManualButton.Visibility = Visibility.Visible;
+                            });
                         }
-                        foodName = desc.Substring(0, desc_end_offset);
-                        lastFoodName = foodName;
-                        output = foodName;
-                    }
-                    Dispatcher.BeginInvoke(() => /* necessary to prevent access issues */
+                        else
+                        {
+                            string desc = responseText.Substring(desc_offset);
+                            desc_end_offset = desc.IndexOf("</td>");
+                            if (desc_end_offset == -1)
+                            {
+                                output += "Error parsing return from UPC site";
+                                return;
+                            }
+                            // success
+                            foodName = desc.Substring(0, desc_end_offset);
+                            lastFoodName = foodName; // populate lastFoodName - this is used by GetMatches
+                            output = foodName;
+                            db.AddBarcodeResultToCache(barcodeValue, foodName);
+                            Dispatcher.BeginInvoke(() => 
+                            {
+                                // Update UI in a separate thread to prevent access issues
+                                Info.Text = output;
+                                ManualButton.Visibility = Visibility.Collapsed;
+                                MatchesButton.Visibility = Visibility.Visible;
+                            });
+                        }
+                    }, null);
+                }
+                else
+                {
+                    // Name is not null, so it's in the cache.
+                    lastFoodName = foodName;
+                    output = foodName;
+                    Dispatcher.BeginInvoke(() => 
                     {
+                        // Update UI
                         Info.Text = output;
                         ManualButton.Visibility = Visibility.Collapsed;
                         MatchesButton.Visibility = Visibility.Visible;
                     });
-                }, null);
+                }
             }); 
             
         }

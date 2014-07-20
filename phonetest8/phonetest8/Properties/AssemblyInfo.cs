@@ -6,11 +6,11 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("phonetest8")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Foodstorm")]
+[assembly: AssemblyDescription("Agile food management")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("phonetest8")]
+[assembly: AssemblyCompany("octoclam")]
+[assembly: AssemblyProduct("Foodstorm")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
