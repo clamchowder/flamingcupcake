@@ -206,6 +206,10 @@ namespace phonetest8
 
             private string prepTimeString;
 
+            /// <summary>
+            /// Gives a well formatted string for display, constructed
+            /// from the prep time variable
+            /// </summary>
             public string PrepTimeString
             {
                 get
@@ -224,6 +228,12 @@ namespace phonetest8
                 set { prepTimeString = value; }
             }
 
+            /// <summary>
+            /// Image support. A base64 encoded string representing the entire
+            /// image file is stored in imageStr. The get method for image
+            /// returns a Bitmap image constructed from the decoded string.
+            /// This image object can be directly bound to an image control
+            /// </summary>
             public BitmapImage image {get {
                 if (imageStr == null) return null;
                 // Deserialze the base64 encoded image
