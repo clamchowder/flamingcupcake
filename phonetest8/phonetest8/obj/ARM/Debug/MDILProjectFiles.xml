@@ -10,8 +10,6 @@
     <File>Assets\SquareTile71x71.png</File>
     <File>Assets\StoreLogo.png</File>
     <File>Assets\WideLogo.png</File>
-    <File>barcodeMain.png</File>
-    <File>fridgeMain.png</File>
     <File>Images\appbar.delete.png</File>
     <File>Images\appbar.list.select.png</File>
     <File>Images\barcodeMain.png</File>
@@ -20,10 +18,7 @@
     <File>Images\magnifyingGlassMain.png</File>
     <File>Images\matchMain.png</File>
     <File>Images\StirFryPic.jpg</File>
-    <File>knife16.png</File>
     <File>magnifyingGlassMain.png</File>
-    <File>matchMain.png</File>
-    <File>StirFryPic.jpg</File>
     <File>test.db</File>
     <File>Assets\AlignmentGrid.png</File>
     <File>Assets\Tiles\FlipCycleTileLarge.png</File>

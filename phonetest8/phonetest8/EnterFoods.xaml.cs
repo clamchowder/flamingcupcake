@@ -21,6 +21,7 @@ namespace phonetest8
 {
     public partial class EnterFoods : PhoneApplicationPage
     {
+        ProgressIndicator prog;
         private PhotoCamera _phoneCamera = null;
         private IBarcodeReader _barcodeReader;
         private DispatcherTimer _scanTimer;
@@ -59,16 +60,20 @@ namespace phonetest8
             {
                 Info.Text = "Please wait...";
                 MatchesButton.Visibility = Visibility.Collapsed;
+                StartInDeterminateProgress("trying to understand what you just scanned");
             });
 
             // Get matches from azure
             List<db.FoodMatches> matches = await db.getFoodMatches(lastFoodName);
 
+            StopInDeterminateProgress();
             if (matches.Count() == 0)
             {
                 Dispatcher.BeginInvoke(() =>
                 {
-                    Info.Text = "Sorry, no matches found!";
+                    Info.Text = "Sorry, no matches found! Try again...";
+                    MatchesButton.Visibility = Visibility.Collapsed;
+                    ManualButton.Visibility = Visibility.Visible;
                 });
                 return;
             }
@@ -122,8 +127,8 @@ namespace phonetest8
 
             // Initialize the camera object
             _phoneCamera = new PhotoCamera();
-           // _phoneCamera.FlashMode = FlashMode.Off;
-             _phoneCamera.Initialized += initialize_cam;
+            StartInDeterminateProgress("initializing camera");
+            _phoneCamera.Initialized += initialize_cam;
 
             _barcodeReader = new BarcodeReader();
             _barcodeReader.Options.TryHarder = true;
@@ -161,7 +166,7 @@ namespace phonetest8
                 Dispatcher.BeginInvoke(() =>
                 {
                     Info.Text = "Camera initialized.";
-                    
+                    StopInDeterminateProgress();
                     _scanTimer.Start();
                 });          
             }
@@ -282,6 +287,28 @@ namespace phonetest8
                         });
                     }
                 }
+            }
+        }
+
+        private void StartInDeterminateProgress(String text)
+        {
+            if (prog == null)
+            {
+                prog = new ProgressIndicator();
+            }
+            SystemTray.SetIsVisible(this, true);
+            prog.IsVisible = true;
+            prog.IsIndeterminate = true;
+            prog.Text = text;
+            SystemTray.SetProgressIndicator(this, prog);
+        }
+        private void StopInDeterminateProgress()
+        {
+            if (prog != null)
+            {
+                SystemTray.SetIsVisible(this, false);
+
+                prog.IsVisible = false;
             }
         }
     }

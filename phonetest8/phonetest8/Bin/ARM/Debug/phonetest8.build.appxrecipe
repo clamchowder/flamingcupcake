@@ -288,12 +288,6 @@
     <AppxPackagedFile Include="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Assets\WideLogo.png">
       <PackagePath>Assets\WideLogo.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\barcodeMain.png">
-      <PackagePath>barcodeMain.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\fridgeMain.png">
-      <PackagePath>fridgeMain.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Images\appbar.delete.png">
       <PackagePath>Images\appbar.delete.png</PackagePath>
     </AppxPackagedFile>
@@ -315,14 +309,8 @@
     <AppxPackagedFile Include="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Images\matchMain.png">
       <PackagePath>Images\matchMain.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\knife16.png">
-      <PackagePath>knife16.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\magnifyingGlassMain.png">
       <PackagePath>magnifyingGlassMain.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\matchMain.png">
-      <PackagePath>matchMain.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Assets\AlignmentGrid.png">
       <PackagePath>Assets\AlignmentGrid.png</PackagePath>
@@ -347,9 +335,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Images\StirFryPic.jpg">
       <PackagePath>Images\StirFryPic.jpg</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\StirFryPic.jpg">
-      <PackagePath>StirFryPic.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Resources\_LOL1547.jpg">
       <PackagePath>Resources\_LOL1547.jpg</PackagePath>

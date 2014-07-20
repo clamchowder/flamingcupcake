@@ -22,15 +22,15 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Foodstorm" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Manual Entry" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="FOODSTORM" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="manual entry" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
             <TextBlock Text="Enter the food you wish to add to your fridge." Style="{StaticResource PhoneTextSubtleStyle}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <TextBox Name="FoodInputBox" HorizontalAlignment="Stretch" Height="72" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-            <Button Content="Find Matches" HorizontalAlignment="Left" Margin="0,75,0,0" VerticalAlignment="Top" Width="456"  Click="FindMatches"/>
+            <Button Content="go" HorizontalAlignment="Stretch" Margin="0,75,0,0" VerticalAlignment="Top" Click="FindMatches"/>
             <TextBlock Name="Status" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         </Grid>
     </Grid>

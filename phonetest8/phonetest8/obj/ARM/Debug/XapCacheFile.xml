@@ -1,6 +1,6 @@
-﻿<xapCache source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\phonetest8_Debug_ARM.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2014-07-19 9:26:55 PM">
-  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="2014-07-19 9:26:42 PM" />
-  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\Foodstorm.dll" archivePath="Foodstorm.dll" lastWriteTime="2014-07-19 9:26:41 PM" />
+﻿<xapCache source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\phonetest8_Debug_ARM.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2014-07-19 10:37:35 PM">
+  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="2014-07-19 10:31:53 PM" />
+  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\Foodstorm.dll" archivePath="Foodstorm.dll" lastWriteTime="2014-07-19 10:37:28 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Assets\BadgeLogo.png" archivePath="Assets\BadgeLogo.png" lastWriteTime="2014-07-19 9:25:16 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Assets\Logo.png" archivePath="Assets\Logo.png" lastWriteTime="2014-07-19 9:25:16 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Assets\SplashScreen.png" archivePath="Assets\SplashScreen.png" lastWriteTime="2014-07-19 9:25:16 PM" />
@@ -8,8 +8,6 @@
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Assets\SquareTile71x71.png" archivePath="Assets\SquareTile71x71.png" lastWriteTime="2014-07-19 9:25:16 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Assets\StoreLogo.png" archivePath="Assets\StoreLogo.png" lastWriteTime="2014-07-19 9:25:16 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Assets\WideLogo.png" archivePath="Assets\WideLogo.png" lastWriteTime="2014-07-19 9:25:16 PM" />
-  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\barcodeMain.png" archivePath="barcodeMain.png" lastWriteTime="2014-07-19 9:25:19 PM" />
-  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\fridgeMain.png" archivePath="fridgeMain.png" lastWriteTime="2014-07-19 9:25:19 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Images\appbar.delete.png" archivePath="Images\appbar.delete.png" lastWriteTime="2014-07-19 9:25:19 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Images\appbar.list.select.png" archivePath="Images\appbar.list.select.png" lastWriteTime="2014-07-19 9:25:19 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Images\barcodeMain.png" archivePath="Images\barcodeMain.png" lastWriteTime="2014-07-19 9:25:19 PM" />
@@ -18,10 +16,7 @@
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Images\magnifyingGlassMain.png" archivePath="Images\magnifyingGlassMain.png" lastWriteTime="2014-07-19 9:25:19 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Images\matchMain.png" archivePath="Images\matchMain.png" lastWriteTime="2014-07-19 9:25:19 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Images\StirFryPic.jpg" archivePath="Images\StirFryPic.jpg" lastWriteTime="2014-07-19 9:25:19 PM" />
-  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\knife16.png" archivePath="knife16.png" lastWriteTime="2014-07-19 9:25:19 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\magnifyingGlassMain.png" archivePath="magnifyingGlassMain.png" lastWriteTime="2014-07-19 9:25:19 PM" />
-  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\matchMain.png" archivePath="matchMain.png" lastWriteTime="2014-07-19 9:25:19 PM" />
-  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\StirFryPic.jpg" archivePath="StirFryPic.jpg" lastWriteTime="2014-07-19 9:25:19 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\test.db" archivePath="test.db" lastWriteTime="2014-07-19 9:25:20 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="2014-07-19 9:25:16 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="2014-07-19 9:25:16 PM" />
@@ -73,6 +68,6 @@
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="2014-07-19 9:25:16 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="2014-07-19 9:25:16 PM" />
   <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2014-07-19 9:25:17 PM" />
-  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="2014-07-19 9:26:53 PM" />
-  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="2014-07-19 9:26:47 PM" />
+  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\obj\ARM\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="2014-07-19 10:37:34 PM" />
+  <file source="C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\Bin\ARM\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="2014-07-19 9:33:25 PM" />
 </xapCache>

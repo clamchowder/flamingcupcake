@@ -197,8 +197,6 @@
     <Content Include="Assets\SquareTile71x71.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\WideLogo.png" />
-    <Content Include="barcodeMain.png" />
-    <Content Include="fridgeMain.png" />
     <Content Include="Images\appbar.delete.png" />
     <Content Include="Images\appbar.list.select.png" />
     <Content Include="Images\barcodeMain.png" />
@@ -207,10 +205,7 @@
     <Content Include="Images\magnifyingGlassMain.png" />
     <Content Include="Images\matchMain.png" />
     <Content Include="Images\StirFryPic.jpg" />
-    <Content Include="knife16.png" />
     <Content Include="magnifyingGlassMain.png" />
-    <Content Include="matchMain.png" />
-    <Content Include="StirFryPic.jpg" />
     <Content Include="test.db" />
   </ItemGroup>
   <ItemGroup>
