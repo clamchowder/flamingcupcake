@@ -25,8 +25,7 @@ namespace phonetest8
             // Set the data context of the listbox control to the sample data
             DataContext = App.fridgeViewModel;
             ApplicationBar = (Microsoft.Phone.Shell.ApplicationBar)Resources["SelectAppBar"];
-            // expander.ItemsSource = new string[] { "hello", "world!" };
-            // Sample code to localize the ApplicationBar
+
             //BuildLocalizedApplicationBar();
         }
 
@@ -36,10 +35,20 @@ namespace phonetest8
             // Refresh! Otherwise there's a good chance that it'll keep stale data
             // It's pulling from an on-phone database, so this should be fairly fast
             App.fridgeViewModel.LoadData();
-            /*if (!App.fridgeViewModel.IsDataLoaded)
+
+            // If the fridge is empty, show the empty fridge text and disable appbar
+            if (App.fridgeViewModel.UnsortedBatch.Count == 0)
             {
-                App.fridgeViewModel.LoadData();
-            }*/
+                EmptyFridgeText.Visibility = Visibility.Visible;
+                FridgeLongListMultiSelector.Visibility = Visibility.Collapsed;
+                ApplicationBar.IsVisible = false;
+            }
+            else
+            {
+                EmptyFridgeText.Visibility = Visibility.Collapsed;
+                FridgeLongListMultiSelector.Visibility = Visibility.Visible;
+                ApplicationBar.IsVisible = true;
+            }
         }
 
         private void ApplicationBarSelect_Click(object sender, EventArgs e)
@@ -62,6 +71,19 @@ namespace phonetest8
 
             // Refresh!
             DataContext = new FridgeViewModel();
+
+            if (App.fridgeViewModel.UnsortedBatch.Count == 0)
+            {
+                EmptyFridgeText.Visibility = Visibility.Visible;
+                FridgeLongListMultiSelector.Visibility = Visibility.Collapsed;
+                ApplicationBar.IsVisible = false;
+            }
+            else
+            {
+                EmptyFridgeText.Visibility = Visibility.Collapsed;
+                FridgeLongListMultiSelector.Visibility = Visibility.Visible;
+                ApplicationBar.IsVisible = true;
+            }
         }
 
         private void ingLongListSelector_IsSelectionEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)

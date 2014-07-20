@@ -306,7 +306,7 @@ namespace phonetest8
         {
             if (prog != null)
             {
-                SystemTray.SetIsVisible(this, false);
+                SystemTray.SetIsVisible(this, true);
 
                 prog.IsVisible = false;
             }

@@ -20,9 +20,7 @@
         <phone:JumpListItemForegroundConverter x:Key="ForegroundConverter"/>
 
         <DataTemplate x:Key="ListBoxItemTemplate" >
-            <Grid>
-                <TextBlock Text="{Binding FoodName}" Style="{StaticResource PhoneTextLargeStyle}" HorizontalAlignment="Left" Margin="12"/>
-            </Grid>
+            <TextBlock Text="{Binding FoodName}" Style="{StaticResource PhoneTextLargeStyle}" HorizontalAlignment="Left" Margin="12"/>
         </DataTemplate>
 
     </phone:PhoneApplicationPage.Resources>
@@ -35,8 +33,8 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Foodstorm" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Manual Entry" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="FOODSTORM" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="manual entry" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
             <TextBlock Text="Select the closest matching food." Style="{StaticResource PhoneTextSubtleStyle}"/>
         </StackPanel>
         

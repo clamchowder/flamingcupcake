@@ -24,7 +24,7 @@
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="FOODSTORM" Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock Text="manual entry" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-            <TextBlock Text="Enter the food you wish to add to your fridge." Style="{StaticResource PhoneTextSubtleStyle}"/>
+            <TextBlock Text="Enter the food to add to my fridge." Style="{StaticResource PhoneTextSubtleStyle}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->

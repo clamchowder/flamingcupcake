@@ -198,14 +198,14 @@
                                 ContentTemplate="{TemplateBinding ContentInfoTemplate}"/>
                             </Grid>
                             <Rectangle x:Name="OuterHintPanel" Width="24"
-                            HorizontalAlignment="Left"
-                            Height="{TemplateBinding HintPanelHeight}"
-                            Fill="{TemplateBinding Background}"
-                            StrokeThickness="0" Opacity="0.0"/>
+                                        HorizontalAlignment="Left"
+                                        Height="{TemplateBinding HintPanelHeight}"
+                                        Fill="{TemplateBinding Background}"
+                                        StrokeThickness="0" Opacity="0.0"/>
                             <Grid x:Name="OuterCover" IsHitTestVisible="True"
-                            Visibility="Collapsed" Background="Transparent"/>
+                                    Visibility="Collapsed" Background="Transparent" VerticalAlignment="Top"/>
                             <Canvas HorizontalAlignment="Left">
-                                <CheckBox x:Name="SelectBox" VerticalAlignment="Bottom"  Visibility="Collapsed"
+                                <CheckBox x:Name="SelectBox" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed"
                                 IsChecked="{Binding IsSelected, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
                                     <CheckBox.RenderTransform>
                                         <CompositeTransform TranslateX="-58"/>
@@ -257,12 +257,7 @@
         </DataTemplate>
 
         <DataTemplate x:Key="LongListSelectorItemTemplate" >
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="{Binding foodName}" Grid.Column="0" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            </Grid>
+            <TextBlock Text="{Binding foodName}" Margin="-8, 12, 0, 12" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
         </DataTemplate>
 
         <shell:ApplicationBar x:Key="SelectAppBar" IsVisible="True" IsMenuEnabled="True">
@@ -287,11 +282,12 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Foodstorm" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="My Fridge" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="FOODSTORM" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="my fridge" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="Browse foods by food groups." Style="{StaticResource PhoneTextSubtleStyle}"/>
         </StackPanel>
 
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,204">
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <toolkit:LongListMultiSelector Name="FridgeLongListMultiSelector"
                 IsSelectionEnabled="False"
                 IsSelectionEnabledChanged="ingLongListSelector_IsSelectionEnabledChanged"
@@ -303,6 +299,7 @@
                 ItemContainerStyle="{StaticResource LongListMultiSelectorItemListStyle}"
                 HideEmptyGroups ="true" IsGroupingEnabled ="true" LayoutMode="List">
             </toolkit:LongListMultiSelector>
+            <TextBlock Name="EmptyFridgeText" Text="There's nothing in here, go grocery shopping!" Visibility="Collapsed" Margin="12"/>
         </Grid>
     </Grid>
 
