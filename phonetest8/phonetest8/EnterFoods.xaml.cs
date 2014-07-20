@@ -21,16 +21,18 @@ namespace phonetest8
 {
     public partial class EnterFoods : PhoneApplicationPage
     {
-        private PhotoCamera _phoneCamera;
+        private PhotoCamera _phoneCamera = null;
         private IBarcodeReader _barcodeReader;
         private DispatcherTimer _scanTimer;
         private WriteableBitmap _previewBuffer;
 
-        private bool initialize_called;
+        public bool initialize_called;
         private string last_upc;
         private string lastFoodName;
 
         public static string status = "";
+
+        public static Boolean active = false;
 
         public EnterFoods()
         {
@@ -38,10 +40,12 @@ namespace phonetest8
             InitializeComponent();
             MatchesButton.Visibility = Visibility.Collapsed;
             lastFoodName = null;
+            active = true;
         }
 
         private void GoManual(object sender, RoutedEventArgs e)
         {
+            initialize_called = false;
             NavigationService.Navigate(new Uri("/EnterFoodsManually.xaml", UriKind.Relative));
         }
 
@@ -105,6 +109,7 @@ namespace phonetest8
         }
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
+            active = true;
             // If status is set, fill in the status text block, and then
             // clear the status
             Info.Text = status;
@@ -118,7 +123,7 @@ namespace phonetest8
             // Initialize the camera object
             _phoneCamera = new PhotoCamera();
            // _phoneCamera.FlashMode = FlashMode.Off;
-            _phoneCamera.Initialized += initialize_cam;
+             _phoneCamera.Initialized += initialize_cam;
 
             _barcodeReader = new BarcodeReader();
             _barcodeReader.Options.TryHarder = true;
@@ -141,7 +146,10 @@ namespace phonetest8
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             _scanTimer.Stop();
+            //_phoneCamera.Dispose();
+            //_phoneCamera = null;
             initialize_called = false;
+            active = false;
             base.OnNavigatedFrom(e);
         }
 
@@ -153,6 +161,7 @@ namespace phonetest8
                 Dispatcher.BeginInvoke(() =>
                 {
                     Info.Text = "Camera initialized.";
+                    
                     _scanTimer.Start();
                 });          
             }
@@ -193,6 +202,11 @@ namespace phonetest8
                     if (desc_offset == 28) // indexOf returns -1 => 29 - 1 = 28
                     {
                         output += "Could not find product";
+                        Dispatcher.BeginInvoke(() => /* necessary to prevent access issues */
+                        {
+                            Info.Text = output;
+                            ManualButton.Visibility = Visibility.Visible;
+                        });
                     }
                     else
                     {
@@ -219,7 +233,7 @@ namespace phonetest8
 
         void scan_for_barcode()
         {
-            if (initialize_called)
+            if (initialize_called && active)
             {
                 Dispatcher.BeginInvoke(() =>
                 {
@@ -231,6 +245,7 @@ namespace phonetest8
                     }
                     catch (Exception)
                     {
+                        initialize_called = false;
                     }
                 });
             }

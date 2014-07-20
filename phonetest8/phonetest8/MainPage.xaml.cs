@@ -27,6 +27,13 @@ namespace phonetest8
             //BuildLocalizedApplicationBar();
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            // Make sure barcode scanning page does not consume excessive CPU cycles
+            EnterFoods.active = false;
+            base.OnNavigatedFrom(e);
+        }
+
         private void GotoScan(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/EnterFoods.xaml", UriKind.Relative));
