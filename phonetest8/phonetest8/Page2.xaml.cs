@@ -37,31 +37,15 @@ namespace phonetest8
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            //conn = new SQLiteConnection("test.db", SQLiteOpenFlags.Create | SQLiteOpenFlags.ReadWrite);
-
-            // Apparently this creates if the table doesn't already exist
-            // Hopefully, it won't overwrite existing tables
-           // conn.CreateTable<Food>();
         }
         private async void GetFood(object sender, RoutedEventArgs e)
-        {
-            //string output = "";
-            
-            /*List<Food> foods = conn.Table<Food>().ToList<Food>();
-            Food[] foods_arr = foods.ToArray();
-            for (int i = 0; i < foods_arr.Length; i++)
-            {
-                output += foods_arr[i] + "\n";
-            }*/
-            /*await App.MobileService.GetTable<Food>().ToListAsync();
-            Result.Text = output;*/
-            
+        {           
             var result = await db.getFoodMatches(InputTextBox.Text);
             matches = result;
             db.FoodMatches[] result_arr = result.ToArray();
             for (int i = 0; i < result_arr.Length; i++)
             {
-                Result.Text += result_arr[i].foodName + ", " + result_arr[i].keywordCount + "\n";
+                Result.Text += result_arr[i].FoodName + ", " + result_arr[i].keywordCount + "\n";
             }
         }
 
@@ -78,11 +62,11 @@ namespace phonetest8
             Result.Text = "";
             for (int i = 0; i < result_arr.Length; i++)
             {
-                Result.Text += result_arr[i].name + "\n";
+                Result.Text += result_arr[i].Name + "\n";
             }
             recipe_matches = result;
 
-            List<db.Instruction> instructions = result_arr[0].GetInstructions();
+            List<Instruction<Ingredient>> instructions = result_arr[0].GetInstructions();
             Result.Text += instructions.Count();
         }
         private async void GetIngredients(object sender, RoutedEventArgs e)
@@ -90,7 +74,7 @@ namespace phonetest8
             if (recipe_matches != null)
             {
                 var ingredients = await db.getRecipeIngredients(recipe_matches[0]);
-                RecipeView.Ingredient[] arr = ingredients.ToArray();
+                Ingredient[] arr = ingredients.ToArray();
                 for (int i = 0; i < arr.Length; i++)
                 {
                     Result.Text += arr[i].Name + "\n";

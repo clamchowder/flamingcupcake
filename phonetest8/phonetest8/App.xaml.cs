@@ -29,6 +29,38 @@ namespace phonetest8
             "oGwxtcEwqIfkPUxPiISdOMhyZDihUd78"
         );
 
+        private static FridgeViewModel fridgeviewmodel = null;
+
+        public static FridgeViewModel fridgeViewModel
+        {
+            get
+            {
+                // Delay creation of the view model until necessary
+                if (fridgeviewmodel == null)
+                    fridgeviewmodel = new FridgeViewModel();
+
+                return fridgeviewmodel;
+            }
+        }
+
+        private static RecipeViewModel recipeviewmodel = null;
+
+        /// <summary>
+        /// A static ViewModel used by the views to bind against.
+        /// </summary>
+        /// <returns>The MainViewModel object.</returns>
+        public static RecipeViewModel recipeViewModel
+        {
+            get
+            {
+                // Delay creation of the view model until necessary
+                if (recipeviewmodel == null)
+                    recipeviewmodel = new RecipeViewModel();
+
+                return recipeviewmodel;
+            }
+        }
+
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
@@ -46,7 +78,7 @@ namespace phonetest8
             InitializeLanguage();
 
             // Show graphics profiling information while debugging.
-            if (Debugger.IsAttached)
+            /*if (Debugger.IsAttached)
             {
                 // Display the current frame rate counters.
                 Application.Current.Host.Settings.EnableFrameRateCounter = true;
@@ -55,7 +87,7 @@ namespace phonetest8
                 // Caution:- Use this under debug mode only. Application that disables user idle detection will continue to run
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
-            }
+            }*/
 
         }
 

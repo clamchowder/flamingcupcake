@@ -15,9 +15,11 @@ using System.Windows.Input; // needed for GestureEventArgs
 using System.Threading.Tasks; // used for async web response
 using System.IO; // needed for stream (for web response, for UPC code lookup online)
 
+using GestureEventArgs = System.Windows.Input.GestureEventArgs;
+
 namespace phonetest8
 {
-    public partial class Page1 : PhoneApplicationPage
+    public partial class EnterFoods : PhoneApplicationPage
     {
         private PhotoCamera _phoneCamera;
         private IBarcodeReader _barcodeReader;
@@ -26,15 +28,93 @@ namespace phonetest8
 
         private bool initialize_called;
         private string last_upc;
+        private string lastFoodName;
 
-        public Page1()
+        public static string status = "";
+
+        public EnterFoods()
         {
             initialize_called = false;
             InitializeComponent();
+            MatchesButton.Visibility = Visibility.Collapsed;
+            lastFoodName = null;
         }
 
+        private void GoManual(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/EnterFoodsManually.xaml", UriKind.Relative));
+        }
+
+        private async void GetMatches(object sender, RoutedEventArgs e)
+        {
+            if (lastFoodName == null) return;
+
+            last_upc = "";
+
+            Dispatcher.BeginInvoke(() =>
+            {
+                Info.Text = "Please wait...";
+                MatchesButton.Visibility = Visibility.Collapsed;
+            });
+
+            // Get matches from azure
+            List<db.FoodMatches> matches = await db.getFoodMatches(lastFoodName);
+
+            if (matches.Count() == 0)
+            {
+                Dispatcher.BeginInvoke(() =>
+                {
+                    Info.Text = "Sorry, no matches found!";
+                });
+                return;
+            }
+
+            db.FoodMatches bestMatch = null;
+
+            // Find maximum number of keyword matches to rank results
+            // also keep track of how many are tied for 'best match'.
+            int maxKeywordMatches = 0, numMatchesAtMax = 0;
+            foreach (db.FoodMatches match in matches)
+            {
+                if (match.keywordCount > maxKeywordMatches)
+                {
+                    maxKeywordMatches = 1;
+                    numMatchesAtMax = 1;
+                    bestMatch = match;
+                }
+                else if (match.keywordCount == maxKeywordMatches)
+                {
+                    numMatchesAtMax++;
+                }
+            }
+            if (numMatchesAtMax > 1)
+            {
+                // navigate to choose foods page
+                ChooseFood.matches = matches;
+                ChooseFood.referrer = "EnterFoods";
+                NavigationService.Navigate(new Uri("/ChooseFood.xaml", UriKind.Relative));
+            }
+            else
+            {
+                Dispatcher.BeginInvoke(() =>
+                {
+                    Info.Text = bestMatch.FoodName + " is now in the virtual fridge!";
+                });
+                db.AddFridgeFood(bestMatch);
+            }
+        }
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
+            // If status is set, fill in the status text block, and then
+            // clear the status
+            Info.Text = status;
+            status = "";
+
+            // When the user first sees the page, the manual entry
+            // option should be avaialble, and the "get matches" button should not
+            MatchesButton.Visibility = Visibility.Collapsed;
+            ManualButton.Visibility = Visibility.Visible;
+
             // Initialize the camera object
             _phoneCamera = new PhotoCamera();
            // _phoneCamera.FlashMode = FlashMode.Off;
@@ -56,8 +136,15 @@ namespace phonetest8
             viewfinderCanvas.Tap += new EventHandler<GestureEventArgs>(focus_Tapped);
 
             base.OnNavigatedTo(e);
-
         }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            _scanTimer.Stop();
+            initialize_called = false;
+            base.OnNavigatedFrom(e);
+        }
+
         void initialize_cam(object sender, Microsoft.Devices.CameraOperationCompletedEventArgs e)
         {
             if (initialize_called) return;
@@ -116,11 +203,14 @@ namespace phonetest8
                             output += "Error parsing return from UPC site";
                         }
                         foodName = desc.Substring(0, desc_end_offset);
+                        lastFoodName = foodName;
+                        output = foodName;
                     }
                     Dispatcher.BeginInvoke(() => /* necessary to prevent access issues */
                     {
                         Info.Text = output;
-                        
+                        ManualButton.Visibility = Visibility.Collapsed;
+                        MatchesButton.Visibility = Visibility.Visible;
                     });
                 }, null);
             }); 
@@ -129,12 +219,21 @@ namespace phonetest8
 
         void scan_for_barcode()
         {
-            Dispatcher.BeginInvoke(() =>
+            if (initialize_called)
             {
-                _phoneCamera.GetPreviewBufferArgb32(_previewBuffer.Pixels);
-                _previewBuffer.Invalidate();
-                _barcodeReader.Decode(_previewBuffer);
-            });
+                Dispatcher.BeginInvoke(() =>
+                {
+                    try
+                    {
+                        _phoneCamera.GetPreviewBufferArgb32(_previewBuffer.Pixels);
+                        _previewBuffer.Invalidate();
+                        _barcodeReader.Decode(_previewBuffer);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                });
+            }
         }
 
         void focus_Tapped(object sender, GestureEventArgs e)

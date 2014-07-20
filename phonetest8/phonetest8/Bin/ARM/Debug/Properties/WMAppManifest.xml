@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
   <DefaultLanguage xmlns="" code="en-US" />
   <App xmlns="" ProductID="{1d3ed5e1-2817-456a-8ce4-ce0648e89246}" Title="phonetest8" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="phonetest8 author" Description="Sample description" Publisher="phonetest8" PublisherID="{4ddca661-f50e-40ca-a32c-ac687c127469}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
@@ -129,4 +129,4 @@
     </ScreenResolutions>
   </App>
 </Deployment>
-<!-- WPSDK Version 8.0.9900 -->
+<!-- WPSDK Version 8.1.12358 -->

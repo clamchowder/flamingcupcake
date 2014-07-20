@@ -9,28 +9,44 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using phonetest8.Resources;
 
-
 namespace phonetest8
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        public enum FoodGroup
+        {
+            produce, proteins, dairy, grains, condiments, misc
+        }
+
         // Constructor
         public MainPage()
         {
             InitializeComponent();
-
+            
             // Sample code to localize the ApplicationBar
-         //BuildLocalizedApplicationBar();
+            //BuildLocalizedApplicationBar();
         }
 
-        private void GotoTest(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/Page2.xaml", UriKind.Relative));
-        }
-
-        private void EnterFoodsClick(object sender, RoutedEventArgs e)
+        private void GotoScan(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/EnterFoods.xaml", UriKind.Relative));
+        }
+
+        private void GotoFridge(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Fridge.xaml", UriKind.Relative));
+        }
+
+        private async void GotoMatch(object send, RoutedEventArgs e)
+        {
+            List<db.Recipe> matches = await db.FindRecipes();
+            MatchedRecipeList.RecipeList = matches;
+            NavigationService.Navigate(new Uri("/MatchedRecipeList.xaml", UriKind.Relative));
+        }
+
+        private void GotoFind(object send, RoutedEventArgs e)
+        {
+
         }
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()
