@@ -82,14 +82,16 @@
         </Style>
 
         <DataTemplate x:Key="InsLongListSelectorGroupHeaderTemplate">
-            <Border Background="{StaticResource PhoneChromeBrush}" BorderBrush="LightGray" BorderThickness="0" Padding="4">
-                <TextBlock Text="{Binding Text}" Margin="12"
-                            Foreground="{StaticResource PhoneForegroundBrush}" 
-                            TextWrapping="Wrap" 
-                            Style="{StaticResource PhoneTextTitle2Style}"
-                            FontSize="24"
-                            HorizontalAlignment="Stretch"/>
-            </Border>
+            <StackPanel Orientation="Vertical" Margin="8,16,8,0">
+                <Border Background="{StaticResource PhoneChromeBrush}" BorderBrush="LightGray" BorderThickness="0" Padding="4">
+                    <TextBlock Text="{Binding Text}" Margin="12"
+                                Foreground="{StaticResource PhoneForegroundBrush}" 
+                                TextWrapping="Wrap" 
+                                Style="{StaticResource PhoneTextTitle2Style}"
+                                FontSize="24"
+                                HorizontalAlignment="Stretch"/>
+                </Border>
+            </StackPanel>
         </DataTemplate>
 
         <DataTemplate x:Key="InsLongListSelectorItemTemplate" >
@@ -177,7 +179,6 @@
             <phone:PivotItem Header="Prep Steps" >
                 <phone:LongListSelector Name="insLongListSelector"   
                          ItemsSource="{Binding GroupedInstructionsList}"
-                         JumpListStyle="{StaticResource InsLongListSelectorJumpListStyle}"  
                          GroupHeaderTemplate="{StaticResource InsLongListSelectorGroupHeaderTemplate}"
                          ItemTemplate="{StaticResource InsLongListSelectorItemTemplate}"
                          IsGroupingEnabled ="true" LayoutMode="List"/>
