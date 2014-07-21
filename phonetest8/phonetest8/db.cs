@@ -202,9 +202,20 @@ namespace phonetest8
             public int nPoints;
             public int points;
             public int nRequired;
-            public float rating;
+            private float rating;
+            public float Rating
+            {
+                get { return rating; }
+                set { rating = value; }
+            }
+
             public string imageStr;
             private string prepTimeString;
+
+            public Recipe Clone()
+            {
+                return (Recipe)this.MemberwiseClone();
+            }
 
             /// <summary>
             /// Gives the match percentage as an integer
@@ -214,6 +225,14 @@ namespace phonetest8
                 get
                 {
                     return (points / nPoints) * 100;
+                }
+            }
+
+            public string matchPercentageString
+            {
+                get
+                {
+                    return "Match: " + matchPercentage.ToString() + "%";
                 }
             }
 
@@ -229,11 +248,11 @@ namespace phonetest8
                     int mins = prepTime % 60;
                     if (hours == 0)
                     {
-                        return mins.ToString() + "m";
+                        return "Prep time: " + mins.ToString() + "m";
                     }
                     else
                     {
-                        return hours.ToString() + "h " + mins.ToString() + "m";
+                        return "Prep time: " + hours.ToString() + "h " + mins.ToString() + "m";
                     }
                 }
                 set { prepTimeString = value; }
