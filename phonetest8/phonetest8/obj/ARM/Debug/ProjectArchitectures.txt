@@ -1,1 +1,1 @@
-C:\Users\Vivian\Documents\Github\flamingcupcake\phonetest8\phonetest8\phonetest8.csproj;arm
+C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\phonetest8.csproj;arm

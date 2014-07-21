@@ -24,16 +24,6 @@ namespace phonetest8
         public MatchedRecipeList()
         {
             InitializeComponent();
-
-            matchedRecipelist.DataContext = this;
-            try
-            {
-                matchedRecipelist.ItemsSource = RecipeList;
-            }
-            catch (Exception)
-            {
-
-            }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -47,13 +37,27 @@ namespace phonetest8
                     Message.Text = ":( We couldn't find anything that matched what you have...";
                 Message.Visibility = Visibility.Visible;
             }
+
+            matchedRecipelist.DataContext = this;
+            try
+            {
+                matchedRecipelist.ItemsSource = RecipeList;
+            }
+            catch (Exception)
+            {
+                // just in case the list is empty
+            }
+            base.OnNavigatedTo(e);
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
             base.OnNavigatedFrom(e);
         }
 
         private void matchedRecipelist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             RecipeViewModel.recipe = matchedRecipelist.SelectedItem as db.Recipe;
-            RecipeViewModel.CreateInstructions();
             NavigationService.Navigate(new Uri("/ViewRecipe.xaml", UriKind.Relative));
         }
     }

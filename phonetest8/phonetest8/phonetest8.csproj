@@ -202,6 +202,8 @@
     <Content Include="Images\appbar.list.select.png" />
     <Content Include="Images\barcodeMain.png" />
     <Content Include="Images\fridgeMain.png" />
+    <Content Include="Images\ico.png" />
+    <Content Include="Images\ico_med.png" />
     <Content Include="Images\knife16.png" />
     <Content Include="Images\magnifyingGlassMain.png" />
     <Content Include="Images\matchMain.png" />
