@@ -53,7 +53,7 @@ namespace phonetest8
 
         private void GotoFind(object send, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Coming soon! :)");
         }
 
         private void StartInDeterminateProgress(String text)

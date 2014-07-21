@@ -35,7 +35,7 @@ namespace phonetest8
 
         private void Pivot_Loaded(object sender, RoutedEventArgs e)
         {
-            PivotPage.Title = RecipeViewModel.recipe.Name;
+            PivotPage.Title = RecipeViewModel.recipe.Name.ToUpper();
         }
     }
 }

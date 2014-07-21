@@ -290,7 +290,7 @@ namespace phonetest8
                     string[] insPartsArr = insArr[ins_idx].Split(new string[] {"[ins]"}, StringSplitOptions.None);
                     string ingredientsStr = insPartsArr[0];
                     string actionStr = insPartsArr[1];
-                    string ins_text = insPartsArr[2];
+                    string ins_text = (ins_idx+1).ToString() + ". " + insPartsArr[2];
 
                     // Because actions comes after ingredients, add empty actions list and fill that in later
                     Instruction<Ingredient> ins = new Instruction<Ingredient>(ins_text, new List<Instruction<Ingredient>.FoodAction>());

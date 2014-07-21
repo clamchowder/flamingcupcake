@@ -39,14 +39,16 @@
 
         <DataTemplate x:Key="LongListSelectorGroupHeaderTemplate">
             <Border Background="{StaticResource PhoneAccentBrush}" BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="2"	
-                                       Width="auto" VerticalAlignment="Bottom" 				 
-                                        HorizontalAlignment="Left">
+                                       Width="auto" Height="62"  				 
+                                        HorizontalAlignment="Left"
+                        Margin="12">
                 <TextBlock Text="{Binding Key}" 
-                            Foreground="{Binding Converter={StaticResource ForegroundConverter}}"
-                            Padding="4"
-                            Style="{StaticResource PhoneTextTitle2Style}"
+                            Foreground="{StaticResource PhoneForegroundBrush}" 
+                            FontSize="36"
+                            Padding="6"
+                            FontFamily="{StaticResource PhoneFontFamilySemiLight}"
                             HorizontalAlignment="Left"
-                            VerticalAlignment="Stretch"/>
+                            VerticalAlignment="Center"/>
             </Border>
         </DataTemplate>
 
@@ -58,9 +60,12 @@
                         <ColumnDefinition Width="auto" />
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="{Binding Name}" Grid.Column="0" Style="{StaticResource PhoneTextBlockBase }" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextWrapping ="Wrap" Margin="8"/>
-                    <TextBlock Text="{Binding Quantity}" Grid.Column="1" Style="{StaticResource PhoneTextSubtleStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping ="Wrap" Margin="8"/>
-                    <TextBlock Text="{Binding Units}" Grid.Column="2" Style="{StaticResource PhoneTextSubtleStyle}" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextWrapping ="Wrap" Margin="8"/>
+                    <TextBlock Text="{Binding Name}" Grid.Column="0" Style="{StaticResource PhoneTextTitle2Style}"
+                       FontSize="24" Margin="0, 8, 0, 12"  VerticalAlignment="Center" HorizontalAlignment="Stretch" TextWrapping ="Wrap"/>
+                    <TextBlock Text="{Binding Quantity}" Grid.Column="1" Style="{StaticResource PhoneTextSubtleStyle}"
+                                FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping ="Wrap"/>
+                    <TextBlock Text="{Binding Units}" Grid.Column="2" Style="{StaticResource PhoneTextSubtleStyle}" 
+                                FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextWrapping ="Wrap"/>
                 </Grid>
             </StackPanel>
         </DataTemplate>
@@ -141,9 +146,14 @@
           d:DataContext="{d:DesignInstance Type=ViewModels:RecipeViewModel}">
 
         <!--Pivot Control-->
-        <phone:Pivot Name ="PivotPage" Loaded="Pivot_Loaded">
+        <phone:Pivot Name ="PivotPage" Loaded="Pivot_Loaded" Title="">
+            <phone:Pivot.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" Margin="0,-3,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+                </DataTemplate>
+            </phone:Pivot.HeaderTemplate>
             <!--Pivot item one-->
-            <phone:PivotItem Header="Summary">
+            <phone:PivotItem Header="summary">
                 <Grid Margin="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
@@ -165,7 +175,7 @@
             </phone:PivotItem>
 
             <!--Pivot item two-->
-            <phone:PivotItem Header="Ingredients">
+            <phone:PivotItem Header="ingredients">
                 <phone:LongListSelector Name="ingLongListSelector"   
                          ItemsSource="{Binding GroupedIngredientsList}"
                          JumpListStyle="{StaticResource LongListSelectorJumpListStyle}"  
@@ -176,7 +186,7 @@
             </phone:PivotItem>
 
             <!--Pivot item three-->
-            <phone:PivotItem Header="Prep Steps">
+            <phone:PivotItem Header="prep steps">
                 <phone:LongListSelector Name="insLongListSelector"   
                          ItemsSource="{Binding GroupedInstructionsList}"
                          GroupHeaderTemplate="{StaticResource InsLongListSelectorGroupHeaderTemplate}"

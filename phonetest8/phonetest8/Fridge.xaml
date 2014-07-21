@@ -205,7 +205,7 @@
                             <Grid x:Name="OuterCover" IsHitTestVisible="True"
                                     Visibility="Collapsed" Background="Transparent" VerticalAlignment="Top"/>
                             <Canvas HorizontalAlignment="Left">
-                                <CheckBox x:Name="SelectBox" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed"
+                                <CheckBox x:Name="SelectBox" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Margin="0,-8,0,0"
                                 IsChecked="{Binding IsSelected, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
                                     <CheckBox.RenderTransform>
                                         <CompositeTransform TranslateX="-58"/>
@@ -240,24 +240,24 @@
         </Style>
 
         <DataTemplate x:Key="LongListSelectorGroupHeaderTemplate">
-            <Border Background="Transparent" Padding="5">
-                <Border Background="{StaticResource PhoneAccentBrush}" BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="2"	
+            <Border Background="{StaticResource PhoneAccentBrush}" BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="2"	
                                        Width="auto" Height="62"  				 
                                         HorizontalAlignment="Left"
-                        Margin="8">
-                    <TextBlock Text="{Binding Key}" 
+                        Margin="12">
+                <TextBlock Text="{Binding Key}" 
                             Foreground="{StaticResource PhoneForegroundBrush}" 
-                            FontSize="48"
+                            FontSize="36"
                             Padding="6"
                             FontFamily="{StaticResource PhoneFontFamilySemiLight}"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Center"/>
-                </Border>
             </Border>
         </DataTemplate>
 
         <DataTemplate x:Key="LongListSelectorItemTemplate" >
-            <TextBlock Text="{Binding foodName}" Margin="-8, 12, 0, 12" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+            <TextBlock Text="{Binding foodName}" 
+                       Style="{StaticResource PhoneTextTitle2Style}"
+                       FontSize="24" Margin="-12, 8, 0, 12" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
         </DataTemplate>
 
         <shell:ApplicationBar x:Key="SelectAppBar" IsVisible="True" IsMenuEnabled="True">
