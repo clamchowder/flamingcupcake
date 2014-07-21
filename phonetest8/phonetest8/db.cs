@@ -200,11 +200,22 @@ namespace phonetest8
             public string instructions;
             public int prepTime;
             public int nPoints;
+            public int points;
             public int nRequired;
             public float rating;
             public string imageStr;
-
             private string prepTimeString;
+
+            /// <summary>
+            /// Gives the match percentage as an integer
+            /// </summary>
+            public int matchPercentage
+            {
+                get
+                {
+                    return (points / nPoints) * 100;
+                }
+            }
 
             /// <summary>
             /// Gives a well formatted string for display, constructed
