@@ -146,7 +146,13 @@
           d:DataContext="{d:DesignInstance Type=ViewModels:RecipeViewModel}">
 
         <!--Pivot Control-->
-        <phone:Pivot Name ="PivotPage" Loaded="Pivot_Loaded" Title="">
+        <phone:Pivot Name ="PivotPage" Loaded="Pivot_Loaded" Title="FOODSTORM">
+            <phone:Pivot.TitleTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" Margin ="0" Style="{StaticResource PhoneTextNormalStyle}"/>
+                </DataTemplate>
+            </phone:Pivot.TitleTemplate>
+            
             <phone:Pivot.HeaderTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding}" Margin="0,-3,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>

@@ -38,7 +38,6 @@ namespace phonetest8
                     Message.Text = ":( We couldn't find anything that matched what you have...";
                 Message.Visibility = Visibility.Visible;
             }
-<<<<<<< HEAD
 
             matchedRecipelist.DataContext = this;
             try
@@ -55,15 +54,8 @@ namespace phonetest8
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             base.OnNavigatedFrom(e);
-=======
-            base.OnNavigatedTo(e);
->>>>>>> 3e3e9aa6bbb802ccdb8b08ebdac406fd5f51f0cb
         }
 
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
-        {
-            base.OnNavigatedFrom(e);
-        }
         private void matchedRecipelist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (matchedRecipelist.SelectedIndex == -1)
