@@ -43,7 +43,6 @@ namespace phonetest8
         // Load UnsortedIngredientsList with random fake foods for the first time
         public void LoadData()
         {
-            Debug.WriteLine("calling loaddata");
             List<Instruction<Ingredient>> insList = recipe.GetInstructions();
 
             /*Ingredient i1 = new Ingredient("chicken", "proteins", 2, "pounds", 1, true);

@@ -27,6 +27,10 @@ namespace phonetest8
             {
                 App.recipeViewModel.LoadData();
             }
+            recipeImage.Source = RecipeViewModel.recipe.image;
+            ratingNoms.Value = RecipeViewModel.recipe.Rating;
+            percentMatchText.Text = RecipeViewModel.recipe.matchPercentageString;
+            prepTimeText.Text = RecipeViewModel.recipe.PrepTimeString;
         }
 
         private void Pivot_Loaded(object sender, RoutedEventArgs e)

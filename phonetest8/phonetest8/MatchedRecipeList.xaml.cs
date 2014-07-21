@@ -38,6 +38,7 @@ namespace phonetest8
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+
             Message.Visibility = Visibility.Collapsed;
             if (RecipeList == null || RecipeList.Count == 0)
             {
@@ -47,14 +48,20 @@ namespace phonetest8
                     Message.Text = ":( We couldn't find anything that matched what you have...";
                 Message.Visibility = Visibility.Visible;
             }
-            base.OnNavigatedFrom(e);
+            base.OnNavigatedTo(e);
         }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+        }
         private void matchedRecipelist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (matchedRecipelist.SelectedIndex == -1)
+                return;
             RecipeViewModel.recipe = matchedRecipelist.SelectedItem as db.Recipe;
-            RecipeViewModel.CreateInstructions();
             NavigationService.Navigate(new Uri("/ViewRecipe.xaml", UriKind.Relative));
+            matchedRecipelist.SelectedIndex = -1;
         }
     }
 }

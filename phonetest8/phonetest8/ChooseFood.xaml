@@ -8,11 +8,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ViewModels="clr-namespace:phonetest8"
+    xmlns:local="clr-namespace:phonetest8"
     mc:Ignorable="d"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True"
+    local:TiltEffect.IsTiltEnabled="True">
 
     <phone:PhoneApplicationPage.Resources>
 

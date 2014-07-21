@@ -4,17 +4,44 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModels="clr-namespace:phonetest8"
     xmlns:local="clr-namespace:phonetest8"
-    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    mc:Ignorable="d"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait" Orientation="Portrait"
-    mc:Ignorable="d"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True"
     local:TiltEffect.IsTiltEnabled="True">
 
+    <phone:PhoneApplicationPage.Resources>
+    <Style x:Name="UnfilledNomStyle" TargetType="toolkit:RatingItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="toolkit:RatingItem">
+                    <Border HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock FontFamily="{StaticResource PhoneFontFamilyBold}" Foreground="DarkGray" >nom</TextBlock>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+    <Style x:Name="FilledNomStyle" TargetType="toolkit:RatingItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="toolkit:RatingItem">
+                    <Border HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock FontFamily="{StaticResource PhoneFontFamilyBold}" Foreground="DarkSalmon">nom</TextBlock>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    </phone:PhoneApplicationPage.Resources>
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
@@ -47,8 +74,10 @@
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding Name}" Style="{StaticResource PhoneTextTitle2Style}"/>
                             <Image Grid.RowSpan="3" Grid.Column="0" Grid.Row="1" Margin="16" Source="{Binding image}"/>
-                            <TextBlock Grid.Column="1" Grid.Row ="1" Text="Rating (stars)" Style="{StaticResource PhoneTextSubtleStyle}" />
-                            <TextBlock Grid.Column="1" Grid.Row ="2" Text="Match (number)" Style="{StaticResource PhoneTextAccentStyle}"/>
+                            <TextBlock Name ="rating" Grid.Column="1" Grid.Row ="1" Style="{StaticResource PhoneTextSubtleStyle}" />
+                            <toolkit:Rating Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="12" Value="{Binding Rating}" IsEnabled="False"
+                                    UnfilledItemStyle="{StaticResource UnfilledNomStyle}" FilledItemStyle="{StaticResource FilledNomStyle}" Width="auto"/>
+                            <TextBlock Name="matchText" Grid.Column="1" Grid.Row ="2" Text="{Binding matchPercentageString}" Style="{StaticResource PhoneTextAccentStyle}"/>
                             <TextBlock Grid.Column="1" Grid.Row ="3" Text="{Binding PrepTimeString}" Style="{StaticResource PhoneTextBlockBase}"/>
                         </Grid>
                     </DataTemplate>

@@ -60,6 +60,7 @@ namespace phonetest8
                 Dispatcher.BeginInvoke(() => /* necessary to prevent access issues */
                 {
                     showToast("No food found :(");
+                    StopInDeterminateProgress();
                 });
                 return;
             }
