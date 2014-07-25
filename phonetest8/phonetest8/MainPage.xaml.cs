@@ -51,9 +51,13 @@ namespace phonetest8
             NavigationService.Navigate(new Uri("/MatchedRecipeList.xaml", UriKind.Relative));
         }
 
-        private void GotoFind(object send, RoutedEventArgs e)
+        private async void GotoFind(object send, RoutedEventArgs e)
         {
-            MessageBox.Show("Coming soon! :)");
+            StartInDeterminateProgress("fetching all recipes");
+            List<db.Recipe> matches = await db.GetAllRecipes();
+            StopInDeterminateProgress();
+            MatchedRecipeList.RecipeList = matches;
+            NavigationService.Navigate(new Uri("/MatchedRecipeList.xaml", UriKind.Relative));
         }
 
         private void StartInDeterminateProgress(String text)

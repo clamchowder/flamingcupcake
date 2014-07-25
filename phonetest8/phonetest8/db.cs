@@ -67,6 +67,13 @@ namespace phonetest8
             var result = await MobileService.InvokeApiAsync<List<db.Recipe>>("findrecipe", System.Net.Http.HttpMethod.Get, _params);
             return result;
         }
+
+        public async static Task<List<Recipe>> GetAllRecipes()
+        {
+            Dictionary<string, string> _params = new Dictionary<string, string>();
+            var result = await MobileService.InvokeApiAsync<List<db.Recipe>>("getallrecipes", System.Net.Http.HttpMethod.Get, _params);
+            return result;
+        }
         /// <summary>
         /// Adds a food to the local fridge database
         /// </summary>
@@ -224,7 +231,7 @@ namespace phonetest8
             {
                 get
                 {
-                    return (points / nPoints) * 100;
+                    return (int)(((float)points / (float)nPoints) * 100);
                 }
             }
 
@@ -301,7 +308,7 @@ namespace phonetest8
                     {
                         string[] ingredients_parts = ingredientsArr[ingredients_idx].Split(',');
                         if (ingredients_parts.Length < 3) continue; // skip empty ingredients
-                        ins.Add(new Ingredient(ingredients_parts[0], int.Parse(ingredients_parts[1]), ingredients_parts[2], 0, false));
+                        ins.Add(new Ingredient(ingredients_parts[0], float.Parse(ingredients_parts[1]), ingredients_parts[2], 0, false));
                     }
 
                     // process actions, and populate list of actions in instruction object
@@ -309,7 +316,7 @@ namespace phonetest8
                     for (int actions_idx = 0; actions_idx < actionsArr.Length; actions_idx++)
                     {
                         if (actionsArr[actions_idx].Length < 1) continue; // skip empty actions
-                        ins.Actions.Add((Instruction<Ingredient>.FoodAction)Enum.Parse(typeof(Instruction<Ingredient>.FoodAction), actionsArr[actions_idx]));
+                        //ins.Actions.Add((Instruction<Ingredient>.FoodAction)Enum.Parse(typeof(Instruction<Ingredient>.FoodAction), actionsArr[actions_idx]));
                     }
                     retval.Add(ins);
                 }
