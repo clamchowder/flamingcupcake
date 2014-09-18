@@ -72,7 +72,7 @@
                                 <RowDefinition />
                                 <RowDefinition />
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding Name}" Style="{StaticResource PhoneTextTitle2Style}" Margin="12,12,4,8"/>
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding Name}" Style="{StaticResource PhoneTextTitle2Style}" Margin="12,12,4,8" TextWrapping="Wrap"/>
                             <Image Grid.RowSpan="3" Grid.Column="0" Grid.Row="1" Source="{Binding image}" Stretch="UniformToFill" Width="200" Margin="12"/>
                             <toolkit:Rating Margin="8,4,4,4" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Value="{Binding Rating}" IsEnabled="False"
                                     UnfilledItemStyle="{StaticResource UnfilledNomStyle}" FilledItemStyle="{StaticResource FilledNomStyle}" Width="auto"/>

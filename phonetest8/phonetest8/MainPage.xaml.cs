@@ -28,7 +28,7 @@ namespace phonetest8
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             // Make sure barcode scanning page does not consume excessive CPU cycles
-            EnterFoods.active = false;
+            EnterFoodsBarcode.active = false;
             base.OnNavigatedFrom(e);
         }
 

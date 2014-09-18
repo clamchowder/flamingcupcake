@@ -55,7 +55,7 @@ namespace phonetest8 {
                 return;
             }
             _contentLoaded = true;
-            System.Windows.Application.LoadComponent(this, new System.Uri("/phonetest8;component/Page2.xaml", System.UriKind.Relative));
+            System.Windows.Application.LoadComponent(this, new System.Uri("/Foodstorm;component/Page2.xaml", System.UriKind.Relative));
             this.LayoutRoot = ((System.Windows.Controls.Grid)(this.FindName("LayoutRoot")));
             this.ContentPanel = ((System.Windows.Controls.Grid)(this.FindName("ContentPanel")));
             this.InputTextBox = ((System.Windows.Controls.TextBox)(this.FindName("InputTextBox")));

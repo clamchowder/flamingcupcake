@@ -31,6 +31,7 @@
     <File>Resources\_LOL1550.jpg</File>
     <File>Resources\_LOL1576.jpg</File>
     <File>Resources\_LOL1580.jpg</File>
+    <File>OcrResources\MsOcrRes.orp</File>
     <File>AppManifest.xaml</File>
     <File>Coding4Fun.Toolkit.Controls.dll</File>
     <File>Microsoft.Phone.Controls.dll</File>
@@ -47,6 +48,7 @@
     <File Type="PCL">System.Net.Http.dll</File>
     <File Type="PCL">System.Net.Http.Extensions.dll</File>
     <File Type="PCL">System.Net.Http.Primitives.dll</File>
+    <File>WindowsPreview.Media.Ocr.winmd</File>
     <File>zxing.wp8.0.dll</File>
     <File>Microsoft.WindowsAzure.Mobile.xml</File>
     <File>Microsoft.WindowsAzure.Mobile.Ext.xml</File>
@@ -57,6 +59,8 @@
     <File>System.Net.Http.xml</File>
     <File>System.Net.Http.Extensions.xml</File>
     <File>System.Net.Http.Primitives.xml</File>
+    <File>WindowsPreview.Media.Ocr.dll</File>
+    <File>WindowsPreview.Media.Ocr.xml</File>
     <File>zxing.wp8.0.xml</File>
     <File>Nokia.Graphics.Imaging.dll</File>
     <File>Nokia.Graphics.Imaging.xml</File>

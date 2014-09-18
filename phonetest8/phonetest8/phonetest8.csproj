@@ -31,6 +31,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>7a3f2e17</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -69,7 +70,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>Bin\x86\Release</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;USE_WP8_NATIVE_SQLITE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -92,7 +93,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>Bin\ARM\Release</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;USE_WP8_NATIVE_SQLITE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -107,6 +108,12 @@
       <DependentUpon>ChooseFood.xaml</DependentUpon>
     </Compile>
     <Compile Include="db.cs" />
+    <Compile Include="EnterFoods.xaml.cs">
+      <DependentUpon>EnterFoods.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EnterFoodsOcr.xaml.cs">
+      <DependentUpon>EnterFoodsOcr.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EnterFoodsManually.xaml.cs">
       <DependentUpon>EnterFoodsManually.xaml</DependentUpon>
     </Compile>
@@ -120,8 +127,8 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EnterFoods.xaml.cs">
-      <DependentUpon>EnterFoods.xaml</DependentUpon>
+    <Compile Include="EnterFoodsBarcode.xaml.cs">
+      <DependentUpon>EnterFoodsBarcode.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Instruction.cs" />
     <Compile Include="Page2.xaml.cs">
@@ -151,6 +158,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="EnterFoods.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EnterFoodsOcr.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="EnterFoodsManually.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -163,7 +178,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EnterFoods.xaml">
+    <Page Include="EnterFoodsBarcode.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,6 +201,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="OcrResources\MsOcrRes.orp" />
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
@@ -281,6 +297,9 @@
     <Reference Include="System.Net.Http.Primitives">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.19\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsPreview.Media.Ocr">
+      <HintPath>..\packages\Microsoft.Windows.Ocr.1.0.0\lib\wp8\x86\WindowsPreview.Media.Ocr.winmd</HintPath>
+    </Reference>
     <Reference Include="zxing.wp8.0, Version=0.14.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\ZXing.Net.0.14.0.1\lib\wp8\zxing.wp8.0.dll</HintPath>
@@ -310,6 +329,7 @@
     <Error Condition="!Exists('..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.props'))" />
     <Error Condition="!Exists('..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets'))" />
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Windows.Ocr.1.0.0\build\wp8\Microsoft.Windows.Ocr.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Windows.Ocr.1.0.0\build\wp8\Microsoft.Windows.Ocr.targets'))" />
   </Target>
   <Import Project="..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets" Condition="Exists('..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets')" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
@@ -318,4 +338,5 @@
     <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
   </Target>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\packages\Microsoft.Windows.Ocr.1.0.0\build\wp8\Microsoft.Windows.Ocr.targets" Condition="Exists('..\packages\Microsoft.Windows.Ocr.1.0.0\build\wp8\Microsoft.Windows.Ocr.targets')" />
 </Project>

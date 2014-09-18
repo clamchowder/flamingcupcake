@@ -1,14 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{1d3ed5e1-2817-456a-8ce4-ce0648e89246}" Title="Foodstorm" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="OctoClam" Description="Agile food management" Publisher="OctoClam" PublisherID="{4ddca661-f50e-40ca-a32c-ac687c127469}">
+  <App xmlns="" ProductID="{1d3ed5e1-2817-456a-8ce4-ce0648e89246}" Title="Foodstorm" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="OctoClam" Description="Foodstorm lets you find recipes you have all the ingredients to make.&#xD;&#xA;Foodstorm manages your food inventory.&#xD;&#xA;Foodstorm is your agile food management system." Publisher="OctoClam" PublisherID="{4ddca661-f50e-40ca-a32c-ac687c127469}">
     <IconPath IsRelative="true" IsResource="false">Images\ico.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
-      <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
-      <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
       <Capability Name="ID_CAP_SENSORS" />
-      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
       <Capability Name="ID_CAP_ISV_CAMERA" />
     </Capabilities>
     <Tasks>
@@ -29,8 +26,7 @@
           </BackTitle>
           <DeviceLockImageURI>
           </DeviceLockImageURI>
-          <HasLarge>
-          </HasLarge>
+          <HasLarge>False</HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>

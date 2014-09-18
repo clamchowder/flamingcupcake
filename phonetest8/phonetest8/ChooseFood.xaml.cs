@@ -44,8 +44,8 @@ namespace phonetest8
             string stat = "\"" + selectedFood.FoodName + "\" placed into my fridge!";
             if (referrer == "EnterFoodsManually")
                 EnterFoodsManually.status = stat;
-            else if (referrer == "EnterFoods")
-                EnterFoods.status = stat;
+            else if (referrer == "EnterFoodsBarcode")
+                EnterFoodsBarcode.status = stat;
 
             // selection succeeded, go back
             NavigationService.GoBack();

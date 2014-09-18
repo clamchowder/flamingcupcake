@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
 
-  <Identity Name="9ae22bc4-c7d1-4b11-ae84-b9370dd56e85"
-            Publisher="CN=lamch_000"
+  <Identity Name="5453OctoClam.Foodstorm"
+            Publisher="CN=C03D2ACF-F604-48A0-ABB6-8B19424CE9A9"
             Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="1d3ed5e1-2817-456a-8ce4-ce0648e89246" PhonePublisherId="4ddca661-f50e-40ca-a32c-ac687c127469"/>
 
   <Properties>
     <DisplayName>phonetest8</DisplayName>
-    <PublisherDisplayName>lamch_000</PublisherDisplayName>
+    <PublisherDisplayName>OctoClam</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

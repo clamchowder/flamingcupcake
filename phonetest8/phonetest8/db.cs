@@ -17,6 +17,7 @@ namespace phonetest8
             "https://foodstorm.azure-mobile.net/",
             "oGwxtcEwqIfkPUxPiISdOMhyZDihUd78"
         );
+
         /// <summary>
         /// Gets a list of matching foods, given a real life food name
         /// </summary>
@@ -26,7 +27,16 @@ namespace phonetest8
         {
             Dictionary<string, string> _params = new Dictionary<string, string>();
             _params.Add("name", name);
-            var result = await MobileService.InvokeApiAsync<List<db.FoodMatches>>("testapi", System.Net.Http.HttpMethod.Get, _params);
+            List<db.FoodMatches> result;
+            try
+            {
+                result = await MobileService.InvokeApiAsync<List<db.FoodMatches>>("testapi", System.Net.Http.HttpMethod.Get, _params);
+            }
+            catch (Exception)
+            {
+                // Error with Azure API call. Return empty list to prevent crash
+                result = new List<db.FoodMatches>();
+            }
             return result;
         }
         /// <summary>
@@ -64,16 +74,68 @@ namespace phonetest8
                 fridgeStr += fridgeFoodsArr[i].foodId;
             }
             _params.Add("fridge", fridgeStr);
-            var result = await MobileService.InvokeApiAsync<List<db.Recipe>>("findrecipe", System.Net.Http.HttpMethod.Get, _params);
+            List<db.Recipe> result;
+            try
+            {
+                result = await MobileService.InvokeApiAsync<List<db.Recipe>>("findrecipe", System.Net.Http.HttpMethod.Get, _params);
+                // push to local database for error recovery, in case next API call fails
+                StoreLocalRecipes(result);
+            }
+            catch (Exception)
+            {
+                // Error with Azure API call. Return empty list to prevent crash
+                result = GetLocalRecipes();
+            }
             return result;
         }
 
+        /// <summary>
+        /// Stores a list of recipes locally.
+        /// This list is used iff an Azure API call fails
+        /// </summary>
+        /// <param name="recipes"></param>
+        public static void StoreLocalRecipes(List<Recipe> recipes)
+        {
+            SQLiteConnection conn = new SQLiteConnection("test.db", SQLiteOpenFlags.Create | SQLiteOpenFlags.ReadWrite);
+            conn.CreateTable<Recipe>(); // Should do create if not exists, so stuff doesn't get overwritten
+            conn.InsertAll(recipes);
+        }
+
+        /// <summary>
+        /// Returns a list of locally stored recipes,
+        /// or an empty list of nothing's stored locally
+        /// Used to recover from Azure API errors. Can be used in the future for caching
+        /// </summary>
+        /// <param name="recipe"></param>
+        /// <returns></returns>
+        public static List<Recipe> GetLocalRecipes()
+        {
+            SQLiteConnection conn = new SQLiteConnection("test.db", SQLiteOpenFlags.Create | SQLiteOpenFlags.ReadWrite);
+            conn.CreateTable<Recipe>(); // Should do create if not exists, so stuff doesn't get overwritten
+            List<Recipe> retlist;
+            // Same thing as GetFridgeFoods
+            try
+            {
+                retlist = conn.Table<Recipe>().ToList<Recipe>();
+            }
+            catch (Exception)
+            {
+                retlist = new List<Recipe>();
+            }
+            return retlist;
+        }
+
+        /// <summary>
+        /// Makes an API call that returns all recipes, regardless of fridge contents
+        /// </summary>
+        /// <returns></returns>
         public async static Task<List<Recipe>> GetAllRecipes()
         {
             Dictionary<string, string> _params = new Dictionary<string, string>();
             var result = await MobileService.InvokeApiAsync<List<db.Recipe>>("getallrecipes", System.Net.Http.HttpMethod.Get, _params);
             return result;
         }
+
         /// <summary>
         /// Adds a food to the local fridge database
         /// </summary>

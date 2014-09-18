@@ -19,6 +19,9 @@
     <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Bin\x86\Debug\Foodstorm.dll">
       <PackagePath>Foodstorm.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\packages\Coding4Fun.Toolkit.Controls.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Controls.dll">
+      <PackagePath>Coding4Fun.Toolkit.Controls.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Phone\v8.1\Libraries\Microsoft.Phone.Controls.dll">
       <PackagePath>Microsoft.Phone.Controls.dll</PackagePath>
     </AppxPackagedFile>
@@ -285,12 +288,6 @@
     <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Assets\WideLogo.png">
       <PackagePath>Assets\WideLogo.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\barcodeMain.png">
-      <PackagePath>barcodeMain.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\fridgeMain.png">
-      <PackagePath>fridgeMain.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Images\appbar.delete.png">
       <PackagePath>Images\appbar.delete.png</PackagePath>
     </AppxPackagedFile>
@@ -303,6 +300,12 @@
     <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Images\fridgeMain.png">
       <PackagePath>Images\fridgeMain.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Images\ico.png">
+      <PackagePath>Images\ico.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Images\ico_med.png">
+      <PackagePath>Images\ico_med.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Images\knife16.png">
       <PackagePath>Images\knife16.png</PackagePath>
     </AppxPackagedFile>
@@ -312,14 +315,8 @@
     <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Images\matchMain.png">
       <PackagePath>Images\matchMain.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\knife16.png">
-      <PackagePath>knife16.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\magnifyingGlassMain.png">
       <PackagePath>magnifyingGlassMain.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\matchMain.png">
-      <PackagePath>matchMain.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Assets\AlignmentGrid.png">
       <PackagePath>Assets\AlignmentGrid.png</PackagePath>
@@ -344,9 +341,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Images\StirFryPic.jpg">
       <PackagePath>Images\StirFryPic.jpg</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\StirFryPic.jpg">
-      <PackagePath>StirFryPic.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lamch_000\Documents\GitHub\flamingcupcake\phonetest8\phonetest8\Resources\_LOL1547.jpg">
       <PackagePath>Resources\_LOL1547.jpg</PackagePath>

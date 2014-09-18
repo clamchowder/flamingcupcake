@@ -25,9 +25,9 @@ namespace phonetest8
             set { _foodgroup = value; }
         }
  
-        private int _quantity;
+        private float _quantity;
 
-        public int Quantity
+        public float Quantity
         {
             get { return _quantity; }
             set { _quantity = value; }
@@ -53,7 +53,7 @@ namespace phonetest8
             get { return _required; }
             set { _required = value; }
         }
-        public Ingredient(string n, int q, string u, int p, Boolean r)
+        public Ingredient(string n, float q, string u, int p, Boolean r)
         {
             Name = n;
             Quantity = q;
