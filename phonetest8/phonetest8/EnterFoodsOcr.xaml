@@ -38,7 +38,7 @@
                     </VideoBrush>
                 </Canvas.Background>
                 <TextBlock x:Name="focusBrackets" Text="[   ]" FontSize="40" Visibility="Collapsed"/>
-                <TextBlock Canvas.Left="10" TextWrapping="Wrap" Name="Info" Text="" Canvas.Top="660" Width="460"/>
+                <TextBlock Canvas.Left="10" TextWrapping="Wrap" Name="Info" Text="" Canvas.Top="660" Width="460" Height="31"/>
             </Canvas>
         </StackPanel>
 

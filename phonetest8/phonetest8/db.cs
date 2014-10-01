@@ -12,7 +12,6 @@ namespace phonetest8
 {
     public static class db
     {
-        private static int max_fridge_id = 0;
         public static MobileServiceClient MobileService = new MobileServiceClient(
             "https://foodstorm.azure-mobile.net/",
             "oGwxtcEwqIfkPUxPiISdOMhyZDihUd78"

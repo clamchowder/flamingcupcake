@@ -25,13 +25,10 @@ namespace phonetest8
     {
         ProgressIndicator prog;
         private PhotoCamera _phoneCamera = null;
-        private IBarcodeReader _barcodeReader;
         private DispatcherTimer _scanTimer;
         private WriteableBitmap _previewBuffer;
 
         public bool initialize_called;
-        private string last_upc;
-        private string lastFoodName;
 
         public static string status = "";
 
@@ -43,7 +40,6 @@ namespace phonetest8
         {
             initialize_called = false;
             InitializeComponent();
-            lastFoodName = null;
             active = true;
         }
 
@@ -186,7 +182,6 @@ namespace phonetest8
             if (prog != null)
             {
                 SystemTray.SetIsVisible(this, true);
-
                 prog.IsVisible = false;
             }
         }
@@ -195,14 +190,12 @@ namespace phonetest8
         {
             refresh_preview_buffer();
 
-            // holds preview buffer rotated 90 degrees cw
-            WriteableBitmap rotatedBuffer = new WriteableBitmap(_previewBuffer.PixelHeight, _previewBuffer.PixelWidth);
             // Convert previewBuffer pixels into a byte array
             byte[] inbytes = new byte[_previewBuffer.Pixels.Length * 4];
             byte[] temp = null; // for holding BitConverter output
 
             // Copy into byte array. Seems like "BGRA8" for ocrEngine and ARGB32 for writeableBitmap have the same byte order
-            for (int i = 0; i < _previewBuffer.Pixels.Length; i++)
+            for (int i =0; i < _previewBuffer.Pixels.Length; i++)
             {
                 temp = BitConverter.GetBytes(_previewBuffer.Pixels[i]);
                 inbytes[i * 4] = temp[0];
@@ -210,6 +203,7 @@ namespace phonetest8
                 inbytes[i * 4 + 2] = temp[2];
                 inbytes[i * 4 + 3] = temp[3];
             }
+
             OcrResult result = await ocrEngine.RecognizeAsync((uint)_previewBuffer.PixelHeight, (uint)_previewBuffer.PixelWidth, inbytes);
             string text = "";
             if (result.Lines != null)

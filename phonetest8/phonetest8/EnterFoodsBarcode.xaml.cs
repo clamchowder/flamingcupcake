@@ -26,18 +26,17 @@ namespace phonetest8
         ProgressIndicator prog;
         private PhotoCamera _phoneCamera = null;
         private IBarcodeReader _barcodeReader;
-        private DispatcherTimer _scanTimer;
         private WriteableBitmap _previewBuffer;
 
         public bool initialize_called;
         private string last_upc;
         private string lastFoodName;
 
+        private db.FoodMatches lastFoodMatch = null;
+
         public static string status = "";
 
         public static Boolean active = false;
-
-        private OcrEngine ocrEngine = new OcrEngine(OcrLanguage.English);
 
         public EnterFoodsBarcode()
         {
@@ -59,7 +58,7 @@ namespace phonetest8
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void GetMatches(object sender, RoutedEventArgs e)
+        private void GetMatches(object sender, RoutedEventArgs e)
         {
             if (lastFoodName == null) return;
 
@@ -67,59 +66,11 @@ namespace phonetest8
 
             Dispatcher.BeginInvoke(() =>
             {
-                Info.Text = "Please wait...";
-                MatchesButton.Visibility = Visibility.Collapsed;
-                StartInDeterminateProgress("trying to understand what you just scanned");
+                Info.Text = lastFoodMatch.FoodName + " is now in the virtual fridge!";
             });
-
-            // Get matches from azure
-            List<db.FoodMatches> matches = await db.getFoodMatches(lastFoodName);
-
-            StopInDeterminateProgress();
-            if (matches.Count() == 0)
-            {
-                Dispatcher.BeginInvoke(() =>
-                {
-                    Info.Text = "Sorry, no matches found! Try again...";
-                    MatchesButton.Visibility = Visibility.Collapsed;
-                });
-                return;
-            }
-
-            db.FoodMatches bestMatch = null;
-
-            // Find maximum number of keyword matches to rank results
-            // also keep track of how many are tied for 'best match'.
-            int maxKeywordMatches = 0, numMatchesAtMax = 0;
-            foreach (db.FoodMatches match in matches)
-            {
-                if (match.keywordCount > maxKeywordMatches)
-                {
-                    maxKeywordMatches = 1;
-                    numMatchesAtMax = 1;
-                    bestMatch = match;
-                }
-                else if (match.keywordCount == maxKeywordMatches)
-                {
-                    numMatchesAtMax++;
-                }
-            }
-            if (numMatchesAtMax > 1)
-            {
-                // navigate to choose foods page
-                ChooseFood.matches = matches;
-                ChooseFood.referrer = "EnterFoodsBarcode";
-                NavigationService.Navigate(new Uri("/ChooseFood.xaml", UriKind.Relative));
-            }
-            else
-            {
-                Dispatcher.BeginInvoke(() =>
-                {
-                    Info.Text = bestMatch.FoodName + " is now in the virtual fridge!";
-                });
-                db.AddFridgeFood(bestMatch);
-            }
+            db.AddFridgeFood(lastFoodMatch);
         }
+
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             active = true;
@@ -145,11 +96,6 @@ namespace phonetest8
             viewfinderBrush.SetSource(_phoneCamera);
             _previewBuffer = new WriteableBitmap((int)_phoneCamera.PreviewResolution.Width, (int)_phoneCamera.PreviewResolution.Height);
 
-            // This timer will be used to scan the camera buffer every 100ms and scan for any barcodes
-            _scanTimer = new DispatcherTimer();
-            _scanTimer.Interval = TimeSpan.FromMilliseconds(100);
-            _scanTimer.Tick += (o, arg) => scan_for_barcode();
-
             viewfinderCanvas.Tap += new EventHandler<GestureEventArgs>(focus_Tapped);
 
             base.OnNavigatedTo(e);
@@ -157,7 +103,6 @@ namespace phonetest8
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            _scanTimer.Stop();
             //_phoneCamera.Dispose();
             //_phoneCamera = null;
             initialize_called = false;
@@ -174,7 +119,6 @@ namespace phonetest8
                 {
                     Info.Text = "Camera initialized.";
                     StopInDeterminateProgress();
-                    _scanTimer.Start();
                 });          
             }
             else
@@ -199,12 +143,13 @@ namespace phonetest8
                 Info.Text = output;
 
                 string barcodeValue = obj.Text; 
-                // First see if the barcode/associated result is cached
-                foodName = db.GetBarcodeResultFromCache(barcodeValue);
+                // First see if the barcode/associated result is cached (disabled for testing)
+                //foodName = db.GetBarcodeResultFromCache(barcodeValue);
+                foodName = null;
                 if (foodName == null)
                 {
                     // Cache miss. Make a web request to get a result
-                    WebRequest req = WebRequest.Create("http://www.upcdatabase.com/item/" + barcodeValue);
+                    WebRequest req = WebRequest.Create("http://foodstormfun.cloudapp.net/upc.php?code=" + barcodeValue);
                     req.BeginGetResponse(r =>
                     {
                         WebResponse response = req.EndGetResponse(r);
@@ -212,47 +157,36 @@ namespace phonetest8
                         StreamReader sr = new StreamReader(resStream, System.Text.Encoding.UTF8);
                         string responseText = "";
 
-                        int desc_offset = 0;
-                        int desc_end_offset = 0;
                         responseText = sr.ReadToEnd();
-                        desc_offset = responseText.IndexOf("Description") + 29;
-                        if (desc_offset == 28) // indexOf returns -1 => 29 - 1 = 28
+                        if (responseText.Equals("No result"))
                         {
-                            output += "Could not find product";
-                            Dispatcher.BeginInvoke(() => /* necessary to prevent access issues */
+                            Dispatcher.BeginInvoke(() =>
                             {
-                                Info.Text = output;
-                                // Re-enable manual entry button and hide 'put in fridge' button
-                                MatchesButton.Visibility = Visibility.Collapsed;
+                                Info.Text = "No result :(";
                             });
                         }
                         else
                         {
-                            string desc = responseText.Substring(desc_offset);
-                            desc_end_offset = desc.IndexOf("</td>");
-                            if (desc_end_offset == -1)
-                            {
-                                output += "Error parsing return from UPC site";
-                                Dispatcher.BeginInvoke(() =>
-                                {
-                                    // display error message, revert buttons to initial state
-                                    Info.Text = output;
-                                    MatchesButton.Visibility = Visibility.Collapsed;
-                                });
-                                return;
-                            }
-                            // success
-                            foodName = desc.Substring(0, desc_end_offset);
+                            char[] responseSep = new char[1];
+                            responseSep[0] = ',';
+                            string[] responseArr = responseText.Split(responseSep);
+                            
+                            if (lastFoodMatch == null) lastFoodMatch = new db.FoodMatches();
+
+                            foodName = responseArr[1];
+
+                            lastFoodMatch.FoodName = responseArr[1];
+                            lastFoodMatch.foodId = responseArr[0];
                             lastFoodName = foodName; // populate lastFoodName - this is used by GetMatches
-                            output = foodName;
                             db.AddBarcodeResultToCache(barcodeValue, foodName);
-                            Dispatcher.BeginInvoke(() => 
+                            Dispatcher.BeginInvoke(() =>
                             {
                                 // Update UI in a separate thread to prevent access issues
-                                Info.Text = output;
+                                Info.Text = "Looks like this is " + lastFoodName;
                                 MatchesButton.Visibility = Visibility.Visible;
                             });
                         }
+                        
                     }, null);
                 }
                 else
@@ -346,6 +280,11 @@ namespace phonetest8
 
                 prog.IsVisible = false;
             }
+        }
+
+        private void ScanButton_Click(object sender, RoutedEventArgs e)
+        {
+            scan_for_barcode();
         }
     }
 }

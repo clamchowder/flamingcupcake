@@ -39,11 +39,13 @@
                 </Canvas.Background>
                 <TextBlock x:Name="focusBrackets" Text="[   ]" FontSize="40" Visibility="Collapsed"/>
             </Canvas>
-            <TextBlock Name="Info" TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}"/>
+            
         </StackPanel>
         
         <Grid Grid.Row="2">
-            <Button Name="MatchesButton" Content="put into fridge" HorizontalAlignment="Stretch" Margin="0,-85,0,0" Click="GetMatches"/>
+            <TextBlock x:Name="Info" TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}" Margin="13,-140,11,85"/>
+            <Button Name="MatchesButton" Content="put into fridge" HorizontalAlignment="Stretch" Margin="237,-85,0,0" Click="GetMatches"/>
+            <Button Name="ScanButton" Content="scan" HorizontalAlignment="Stretch" Margin="0,-85,248,0" Click="ScanButton_Click"/>
         </Grid>
     </Grid>
 
