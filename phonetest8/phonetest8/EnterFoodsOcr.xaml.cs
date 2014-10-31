@@ -188,6 +188,8 @@ namespace phonetest8
 
         private async void OcrButton_Click(object sender, RoutedEventArgs e)
         {
+            List<db.FoodMatches> matches = new List<db.FoodMatches>();
+
             refresh_preview_buffer();
 
             // Convert previewBuffer pixels into a byte array
@@ -205,24 +207,62 @@ namespace phonetest8
             }
 
             OcrResult result = await ocrEngine.RecognizeAsync((uint)_previewBuffer.PixelHeight, (uint)_previewBuffer.PixelWidth, inbytes);
-            string text = "";
+            string text = "", keywordString = "";
             if (result.Lines != null)
             {
                 foreach (OcrLine line in result.Lines) /* wow what a good way to present info */
                 {
+                    keywordString = "";
                     foreach (OcrWord word in line.Words)
                     {
                         text += word.Text + " ";
+                        keywordString += word.Text + "_";
                     }
                     text += "\n";
+
+                    /* make web request to get best match for keyword */
+                    WebRequest req = WebRequest.Create("http://foodstormfun.cloudapp.net/get_food_by_keywords.php?keywords=" + keywordString);
+                    WebResponse response = await req.GetResponseAsync();
+                    Stream resStream = response.GetResponseStream();
+                    StreamReader sr = new StreamReader(resStream, System.Text.Encoding.UTF8);
+                    string responseText = "";
+
+                    responseText = sr.ReadToEnd();
+                    if (!responseText.Equals("No result"))
+                    {
+                        char[] responseSep = new char[1];
+                        responseSep[0] = ',';
+                        string[] responseArr = responseText.Split(responseSep);
+
+                        db.FoodMatches food = new db.FoodMatches();
+                        food.FoodName = responseArr[1];
+                        food.foodId = responseArr[0];
+                        matches.Add(food);
+                    }
+                }
+
+                if (matches.Count() > 0)
+                {
+                    EnterFoodsFromList.matches = matches;
+                    NavigationService.Navigate(new Uri("/EnterFoodsFromList.xaml", UriKind.Relative));
+                }
+                else
+                {
+                    /* should show message like "text recognized but nothing matches.
+                     * But for now dump text for debugging purposes */
+                    Dispatcher.BeginInvoke(() =>
+                    {
+                        MessageBox.Show(text);
+                    });
                 }
             }
-            else text = "Nothing recognized";
-            Dispatcher.BeginInvoke(() =>
+            else
             {
-                //Info.Text = text;
-                MessageBox.Show(text);
-            });
+                Dispatcher.BeginInvoke(() =>
+                {
+                    MessageBox.Show("Nothing recognized");
+                });
+            }
         }
     }
 }
